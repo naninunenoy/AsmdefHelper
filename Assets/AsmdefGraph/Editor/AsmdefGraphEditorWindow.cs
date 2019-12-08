@@ -1,4 +1,6 @@
-﻿using UnityEditor;
+﻿using System.IO;
+using System.Linq;
+using UnityEditor;
 
 namespace AsmdefGraph.Editor {
     public class AsmdefGraphEditorWindow : EditorWindow {
@@ -8,7 +10,14 @@ namespace AsmdefGraph.Editor {
         }
 
         void OnEnable() {
-            var graphView = new AsmdefGraphView() {
+            // プロジェクトのasmdefを全検索
+            var asmdefs = Directory.EnumerateFiles(
+                Directory.GetCurrentDirectory(), "*.asmdef", SearchOption.AllDirectories);
+            var asmdefNames = asmdefs
+                .Select(x => x.Split('\\').LastOrDefault())
+                .Select(x => x.Replace(".asmdef", ""))
+                .Where(x => !string.IsNullOrEmpty(x));
+            var graphView = new AsmdefGraphView(asmdefNames) {
                 style = { flexGrow = 1 }
             };
             rootVisualElement.Add(graphView);

@@ -2,8 +2,8 @@
 
 namespace AsmdefGraph.Editor {
     public class AsmdefNode : Node {
-        public AsmdefNode() {
-            title = "AsmdefNode";
+        public AsmdefNode(string nodeName) {
+            title = nodeName;
 
             var inputPort = Port.Create<Edge>(Orientation.Horizontal, Direction.Input, Port.Capacity.Multi, typeof(Port));
             inputPort.portName = "In";
