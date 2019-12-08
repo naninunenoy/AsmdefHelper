@@ -5,9 +5,15 @@ using UnityEngine.UIElements;
 namespace AsmdefGraph.Editor {
     public class AsmdefGraphView : GraphView {
         public AsmdefGraphView() : base() {
-            AddElement(new AsmdefNode());
-            AddElement(new AsmdefNode());
+            // zoom可能に
+            SetupZoom(ContentZoomer.DefaultMinScale, ContentZoomer.DefaultMaxScale);
+            // 背景を黒に
+            Insert(0, new GridBackground());
+            // ドラッグによる移動可能に
             this.AddManipulator(new SelectionDragger());
+            AddElement(new AsmdefNode());
+            AddElement(new AsmdefNode());
+            AddElement(new AsmdefNode());
         }
 
         public override List<Port> GetCompatiblePorts(Port startAnchor, NodeAdapter nodeAdapter) {
