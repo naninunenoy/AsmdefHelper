@@ -4,7 +4,7 @@ using UnityEngine.UIElements;
 
 namespace AsmdefGraph.Editor {
     public class AsmdefGraphView : GraphView {
-        public AsmdefGraphView(IEnumerable<string> asmdefs) : base() {
+        public AsmdefGraphView(IEnumerable<AsmdefFile> asmdefs) : base() {
             // zoom可能に
             SetupZoom(ContentZoomer.DefaultMinScale, ContentZoomer.DefaultMaxScale);
             // 背景を黒に
@@ -12,7 +12,7 @@ namespace AsmdefGraph.Editor {
             // ドラッグによる移動可能に
             this.AddManipulator(new SelectionDragger());
             foreach (var asmdef in asmdefs) {
-                AddElement(new AsmdefNode(asmdef));
+                AddElement(new AsmdefNode(asmdef.Content.name));
             }
         }
 

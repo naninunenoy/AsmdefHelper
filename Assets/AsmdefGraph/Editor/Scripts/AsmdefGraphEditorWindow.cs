@@ -1,5 +1,5 @@
-﻿using System.IO;
-using System.Linq;
+﻿using System.Collections.Generic;
+using System.IO;
 using UnityEditor;
 
 namespace AsmdefGraph.Editor {
@@ -10,14 +10,19 @@ namespace AsmdefGraph.Editor {
         }
 
         void OnEnable() {
+            var asmdefs = new List<AsmdefFile>();
+            var projectPath = Directory.GetCurrentDirectory() + Path.DirectorySeparatorChar;
             // プロジェクトのasmdefを全検索
-            var asmdefs = Directory.EnumerateFiles(
-                Directory.GetCurrentDirectory(), "*.asmdef", SearchOption.AllDirectories);
-            var asmdefNames = asmdefs
-                .Select(x => x.Split('\\').LastOrDefault())
-                .Select(x => x.Replace(".asmdef", ""))
-                .Where(x => !string.IsNullOrEmpty(x));
-            var graphView = new AsmdefGraphView(asmdefNames) {
+            var fullPathes = Directory.EnumerateFiles(projectPath, "*.asmdef", SearchOption.AllDirectories);
+            // asmdefの内容取得
+            foreach (var fullPath in fullPathes) {
+                var assetPath = fullPath.Replace(projectPath, "");
+                var asmdef = new AsmdefFile();
+                asmdef.LoadFromPath(fullPath, assetPath);
+                asmdefs.Add(asmdef);
+            }
+            // viewの作成
+            var graphView = new AsmdefGraphView(asmdefs) {
                 style = { flexGrow = 1 }
             };
             rootVisualElement.Add(graphView);
