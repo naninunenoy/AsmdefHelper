@@ -29,7 +29,7 @@ namespace AsmdefGraph.Editor {
                     if (!asmdefNodeDict.TryGetValue(dependents, out var toNode)) {
                         continue;
                     }
-                    var edge = fromNode.OutPort.ConnectTo(toNode.InPort);
+                    var edge = fromNode.RightPort.ConnectTo(toNode.LeftPort);
                     contentContainer.Add(edge);// これが無いと線が表示されない
                 }
             }
