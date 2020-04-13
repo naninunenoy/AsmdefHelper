@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f71251e0-52ab-4cea-859f-4c363c01a121" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.AsmdefHelper/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AsmdefHelper/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AsmdefHelper/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AsmdefHelper/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AsmdefHelper/Unity.InternalAPIEditorBridgeDev.001/Unity.InternalAPIEditorBridgeDev.001.asmdef" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AsmdefHelper/Unity.InternalAPIEditorBridgeDev.001/Unity.InternalAPIEditorBridgeDev.001.asmdef" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AsmdefHelper/SyncSolution/Editor/SyncSolutionUtilities.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AsmdefHelper/SyncSolution/Editor/SyncSolutionUtilities.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +81,7 @@
       <workItem from="1586792539676" duration="101000" />
       <workItem from="1586793017650" duration="506000" />
       <workItem from="1586793564564" duration="160000" />
-      <workItem from="1586793758449" duration="679000" />
+      <workItem from="1586793758449" duration="1552000" />
     </task>
     <servers />
   </component>
