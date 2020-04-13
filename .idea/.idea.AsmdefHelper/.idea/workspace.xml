@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f71251e0-52ab-4cea-859f-4c363c01a121" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AsmdefHelper/Unity.InternalAPIEditorBridgeDev.001.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AsmdefHelper/Unity.InternalAPIEditorBridgeDev.001.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.AsmdefHelper/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AsmdefHelper/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.AsmdefHelper/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AsmdefHelper/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AsmdefHelper/Unity.InternalAPIEditorBridgeDev.001/Unity.InternalAPIEditorBridgeDev.001.asmdef" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AsmdefHelper/Unity.InternalAPIEditorBridgeDev.001/Unity.InternalAPIEditorBridgeDev.001.asmdef" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,8 +15,18 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/AsmdefHelper/Unity.InternalAPIEditorBridgeDev.001/Unity.InternalAPIEditorBridgeDev.001.asmdef" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/AsmdefHelper/DependencyGraph/Editor/AsmdefGraphView.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/AsmdefHelper/Example/NewBehaviourScript.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/AsmdefHelper/SyncSolution/Editor/SyncSolutionUtilities.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/AsmdefHelper/DependencyGraph/Editor/AsmdefNode.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Assets/AsmdefHelper/SyncSolution/Editor/SyncSolutionUtilities.cs" />
+      </list>
+    </option>
   </component>
   <component name="ProjectId" id="1aUVRj7P9hORuS7hmPgeR2JVC79" />
   <component name="ProjectViewState">
@@ -72,6 +82,7 @@
       <workItem from="1586792539676" duration="101000" />
       <workItem from="1586793017650" duration="506000" />
       <workItem from="1586793564564" duration="160000" />
+      <workItem from="1586793758449" duration="679000" />
     </task>
     <servers />
   </component>
