@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace AsmdefGraph.Editor {
+namespace AsmdefHelper.DependencyGraph.Editor {
     public class AsmdefDependency {
         public string DependsFrom { get; }
         public IEnumerable<string> DependsTo { get; }

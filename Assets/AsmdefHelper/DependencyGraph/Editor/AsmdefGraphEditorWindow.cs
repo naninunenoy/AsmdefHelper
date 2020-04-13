@@ -3,7 +3,7 @@ using System.Linq;
 using UnityEditor;
 using UnityEditor.Compilation;
 
-namespace AsmdefGraph.Editor {
+namespace AsmdefHelper.DependencyGraph.Editor {
     public class AsmdefGraphEditorWindow : EditorWindow {
         [MenuItem("Window/Open Asmdef Graph Window")]
         public static void Open() {
@@ -17,7 +17,7 @@ namespace AsmdefGraph.Editor {
             foreach (var asmdef in asmdefs) {
                 allDependencies.Add(
                     new AsmdefDependency(
-                        asmdef.name, 
+                        asmdef.name,
                         asmdef.assemblyReferences?.Select(x => x.name) ?? new string[0])
                     );
             }

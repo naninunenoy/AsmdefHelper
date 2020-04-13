@@ -1,9 +1,8 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine.UIElements;
 
-namespace AsmdefGraph.Editor {
+namespace AsmdefHelper.DependencyGraph.Editor {
     public class AsmdefGraphView : GraphView {
         public AsmdefGraphView(IEnumerable<AsmdefDependency> asmdefs) : base() {
             // zoom可能に

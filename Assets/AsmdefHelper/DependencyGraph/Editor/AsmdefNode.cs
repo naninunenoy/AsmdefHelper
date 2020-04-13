@@ -1,6 +1,6 @@
 ﻿using UnityEditor.Experimental.GraphView;
 
-namespace AsmdefGraph.Editor {
+namespace AsmdefHelper.DependencyGraph.Editor {
     public class AsmdefNode : Node {
         public readonly Port LeftPort;
         public readonly Port RightPort;

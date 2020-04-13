@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace AsmdefGraph.Example {
+namespace AsmdefHelper.Example {
     public class NewBehaviourScript : MonoBehaviour {
         // Start is called before the first frame update
         void Start() {

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace AsmdefGraph.Example.Hoge {
+namespace AsmdefHelper.Example.Hoge {
     public class NewBehaviourScript : MonoBehaviour {
         // Start is called before the first frame update
         void Start() {

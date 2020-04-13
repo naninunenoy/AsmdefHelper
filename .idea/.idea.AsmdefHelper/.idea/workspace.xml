@@ -3,6 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="f71251e0-52ab-4cea-859f-4c363c01a121" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AsmdefHelper/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AsmdefHelper/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AsmdefHelper/DependencyGraph/Editor/AsmdefDependency.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AsmdefHelper/DependencyGraph/Editor/AsmdefDependency.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AsmdefHelper/DependencyGraph/Editor/AsmdefGraphEditorWindow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AsmdefHelper/DependencyGraph/Editor/AsmdefGraphEditorWindow.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AsmdefHelper/DependencyGraph/Editor/AsmdefGraphView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AsmdefHelper/DependencyGraph/Editor/AsmdefGraphView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AsmdefHelper/DependencyGraph/Editor/AsmdefNode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AsmdefHelper/DependencyGraph/Editor/AsmdefNode.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AsmdefHelper/Example/Fuga/NewBehaviourScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AsmdefHelper/Example/Fuga/NewBehaviourScript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AsmdefHelper/Example/Hoge/NewBehaviourScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AsmdefHelper/Example/Hoge/NewBehaviourScript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AsmdefHelper/Example/NewBehaviourScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AsmdefHelper/Example/NewBehaviourScript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AsmdefHelper/Example/Piyo/NewBehaviourScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AsmdefHelper/Example/Piyo/NewBehaviourScript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AsmdefHelper/MultipleEdit/Editor/AsmdefMultiEditWindow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AsmdefHelper/MultipleEdit/Editor/AsmdefMultiEditWindow.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/AsmdefHelper/SyncSolution/Editor/SyncSolutionUtilities.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AsmdefHelper/SyncSolution/Editor/SyncSolutionUtilities.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -15,15 +24,30 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/AsmdefHelper/Unity.InternalAPIEditorBridgeDev.001/Unity.InternalAPIEditorBridgeDev.001.asmdef" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/AsmdefHelper/Example/Hoge/NewBehaviourScript.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/AsmdefHelper/DependencyGraph/Editor/AsmdefGraphEditorWindow.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/AsmdefHelper/DependencyGraph/Editor/AsmdefGraphView.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/AsmdefHelper/Example/NewBehaviourScript.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/AsmdefHelper/Example/Fuga/NewBehaviourScript.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/AsmdefHelper/DependencyGraph/Editor/AsmdefDependency.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/AsmdefHelper/SyncSolution/Editor/SyncSolutionUtilities.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/AsmdefHelper/Example/Piyo/NewBehaviourScript.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/AsmdefHelper/MultipleEdit/Editor/AsmdefMultiEditWindow.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/AsmdefHelper/DependencyGraph/Editor/AsmdefNode.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/AsmdefHelper/SyncSolution/Editor/SyncSolutionUtilities.cs" />
+        <option value="$PROJECT_DIR$/Assets/AsmdefHelper/DependencyGraph/Editor/AsmdefDependency.cs" />
+        <option value="$PROJECT_DIR$/Assets/AsmdefHelper/DependencyGraph/Editor/AsmdefGraphEditorWindow.cs" />
+        <option value="$PROJECT_DIR$/Assets/AsmdefHelper/DependencyGraph/Editor/AsmdefNode.cs" />
+        <option value="$PROJECT_DIR$/Assets/AsmdefHelper/DependencyGraph/Editor/AsmdefGraphView.cs" />
+        <option value="$PROJECT_DIR$/Assets/AsmdefHelper/MultipleEdit/Editor/AsmdefMultiEditWindow.cs" />
+        <option value="$PROJECT_DIR$/Assets/AsmdefHelper/Example/NewBehaviourScript.cs" />
+        <option value="$PROJECT_DIR$/Assets/AsmdefHelper/Example/Fuga/NewBehaviourScript.cs" />
+        <option value="$PROJECT_DIR$/Assets/AsmdefHelper/Example/Hoge/NewBehaviourScript.cs" />
+        <option value="$PROJECT_DIR$/Assets/AsmdefHelper/Example/Piyo/NewBehaviourScript.cs" />
       </list>
     </option>
   </component>
@@ -40,6 +64,12 @@
     <property name="TWShift.3" value="true" />
     <property name="TWShift.4" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
@@ -81,7 +111,7 @@
       <workItem from="1586792539676" duration="101000" />
       <workItem from="1586793017650" duration="506000" />
       <workItem from="1586793564564" duration="160000" />
-      <workItem from="1586793758449" duration="1552000" />
+      <workItem from="1586793758449" duration="1991000" />
     </task>
     <servers />
   </component>

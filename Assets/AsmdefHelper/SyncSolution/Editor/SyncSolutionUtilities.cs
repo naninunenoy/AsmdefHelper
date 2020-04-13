@@ -7,7 +7,7 @@ using UnityEngine;
 
 // https://forum.unity.com/threads/solved-unity-not-generating-sln-file-from-assets-open-c-project.538487/
 // Thank you Flexford!
-namespace AsmdeffHelper.SyncSolution {
+namespace AsmdefHelper.SyncSolution.Editor {
     public static class SyncSolutionUtilities {
         static SolutionSynchronizer synchronizer;
 
