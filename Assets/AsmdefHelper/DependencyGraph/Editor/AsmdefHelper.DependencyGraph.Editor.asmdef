@@ -1,5 +1,5 @@
 {
-    "name": "AsmdefGraph.Editor",
+    "name": "AsmdefHelper.DependencyGraph.Editor",
     "references": [],
     "includePlatforms": [
         "Editor"
