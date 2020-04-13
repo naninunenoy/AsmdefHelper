@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\Yosuje\.Rider2019.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Yosuje\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_AsmdefHelper.576791064.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Yosuje\Development\unity\AsmdefHelper" t="IncludeRecursive">
+      <e p="AsmdefHelper.DependencyGraph.Editor.csproj" t="IncludeRecursive" />
+      <e p="AsmdefHelper.Example.csproj" t="IncludeRecursive" />
+      <e p="AsmdefHelper.Example.Fuga.csproj" t="IncludeRecursive" />
+      <e p="AsmdefHelper.Example.Hoge.csproj" t="IncludeRecursive" />
+      <e p="AsmdefHelper.Example.Piyo.csproj" t="IncludeRecursive" />
+      <e p="AsmdefHelper.sln" t="IncludeFlat" />
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="AsmdefHelper" t="Include">
+          <e p="DependencyGraph" t="Include">
+            <e p="Editor" t="Include">
+              <e p="AsmdefDependency.cs" t="Include" />
+              <e p="AsmdefGraphEditorWindow.cs" t="Include" />
+              <e p="AsmdefGraphView.cs" t="Include" />
+              <e p="AsmdefHelper.DependencyGraph.Editor.asmdef" t="Include" />
+              <e p="AsmdefNode.cs" t="Include" />
+            </e>
+          </e>
+          <e p="Example" t="Include">
+            <e p="AsmdefHelper.Example.asmdef" t="Include" />
+            <e p="Fuga" t="Include">
+              <e p="AsmdefHelper.Example.Fuga.asmdef" t="Include" />
+              <e p="NewBehaviourScript.cs" t="Include" />
+            </e>
+            <e p="Hoge" t="Include">
+              <e p="AsmdefHelper.Example.Hoge.asmdef" t="Include" />
+              <e p="NewBehaviourScript.cs" t="Include" />
+            </e>
+            <e p="NewBehaviourScript.cs" t="Include" />
+            <e p="Piyo" t="Include">
+              <e p="AsmdefHelper.Example.Piyo.asmdef" t="Include" />
+              <e p="NewBehaviourScript.cs" t="Include" />
+            </e>
+          </e>
+          <e p="MultipleEdit" t="Include">
+            <e p="Editor" t="Include">
+              <e p="AsmdefHelper.MultipleEdit.Editor.asmref" t="Include" />
+              <e p="AsmdefMultiEditWindow.cs" t="Include" />
+            </e>
+          </e>
+          <e p="Unity.InternalAPIEditorBridgeDev.001" t="Include">
+            <e p="Unity.InternalAPIEditorBridgeDev.001.asmdef" t="Include" />
+          </e>
+          <e p="UnityInternalEditorAssembly" t="Include">
+            <e p="SyncSolutionUtilities.cs" t="Include" />
+          </e>
+        </e>
+      </e>
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="Packages" t="ExcludeRecursive" />
+      <e p="Temp\bin" t="ExcludeRecursive" />
+      <e p="Unity.InternalAPIEditorBridgeDev.001.csproj" t="IncludeRecursive" />
+    </e>
+  </component>
+</project>
