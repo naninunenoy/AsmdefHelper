@@ -5,7 +5,7 @@ using UnityEditor.Compilation;
 
 namespace AsmdefHelper.DependencyGraph.Editor {
     public class AsmdefGraphEditorWindow : EditorWindow {
-        [MenuItem("Window/Open Asmdef Graph Window")]
+        [MenuItem("Window/Asmdef Helper/Open DependencyGraph", priority = 2000)]
         public static void Open() {
             GetWindow<AsmdefGraphEditorWindow>("AsmdefGraphWindow");
         }

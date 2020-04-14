@@ -3,14 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f71251e0-52ab-4cea-859f-4c363c01a121" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AsmdefHelper/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AsmdefHelper/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AsmdefHelper/DependencyGraph/Editor/AsmdefDependency.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AsmdefHelper/DependencyGraph/Editor/AsmdefDependency.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/AsmdefHelper/DependencyGraph/Editor/AsmdefGraphEditorWindow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AsmdefHelper/DependencyGraph/Editor/AsmdefGraphEditorWindow.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AsmdefHelper/DependencyGraph/Editor/AsmdefGraphView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AsmdefHelper/DependencyGraph/Editor/AsmdefGraphView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AsmdefHelper/DependencyGraph/Editor/AsmdefNode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AsmdefHelper/DependencyGraph/Editor/AsmdefNode.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AsmdefHelper/Example/Fuga/NewBehaviourScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AsmdefHelper/Example/Fuga/NewBehaviourScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AsmdefHelper/Example/Hoge/NewBehaviourScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AsmdefHelper/Example/Hoge/NewBehaviourScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AsmdefHelper/Example/NewBehaviourScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AsmdefHelper/Example/NewBehaviourScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AsmdefHelper/Example/Piyo/NewBehaviourScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AsmdefHelper/Example/Piyo/NewBehaviourScript.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/AsmdefHelper/MultipleEdit/Editor/AsmdefMultiEditWindow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AsmdefHelper/MultipleEdit/Editor/AsmdefMultiEditWindow.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/AsmdefHelper/SyncSolution/Editor/SyncSolutionUtilities.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AsmdefHelper/SyncSolution/Editor/SyncSolutionUtilities.cs" afterDir="false" />
     </list>
@@ -38,16 +31,16 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/AsmdefHelper/SyncSolution/Editor/SyncSolutionUtilities.cs" />
         <option value="$PROJECT_DIR$/Assets/AsmdefHelper/DependencyGraph/Editor/AsmdefDependency.cs" />
-        <option value="$PROJECT_DIR$/Assets/AsmdefHelper/DependencyGraph/Editor/AsmdefGraphEditorWindow.cs" />
         <option value="$PROJECT_DIR$/Assets/AsmdefHelper/DependencyGraph/Editor/AsmdefNode.cs" />
         <option value="$PROJECT_DIR$/Assets/AsmdefHelper/DependencyGraph/Editor/AsmdefGraphView.cs" />
-        <option value="$PROJECT_DIR$/Assets/AsmdefHelper/MultipleEdit/Editor/AsmdefMultiEditWindow.cs" />
         <option value="$PROJECT_DIR$/Assets/AsmdefHelper/Example/NewBehaviourScript.cs" />
         <option value="$PROJECT_DIR$/Assets/AsmdefHelper/Example/Fuga/NewBehaviourScript.cs" />
         <option value="$PROJECT_DIR$/Assets/AsmdefHelper/Example/Hoge/NewBehaviourScript.cs" />
         <option value="$PROJECT_DIR$/Assets/AsmdefHelper/Example/Piyo/NewBehaviourScript.cs" />
+        <option value="$PROJECT_DIR$/Assets/AsmdefHelper/MultipleEdit/Editor/AsmdefMultiEditWindow.cs" />
+        <option value="$PROJECT_DIR$/Assets/AsmdefHelper/SyncSolution/Editor/SyncSolutionUtilities.cs" />
+        <option value="$PROJECT_DIR$/Assets/AsmdefHelper/DependencyGraph/Editor/AsmdefGraphEditorWindow.cs" />
       </list>
     </option>
   </component>
@@ -111,7 +104,8 @@
       <workItem from="1586792539676" duration="101000" />
       <workItem from="1586793017650" duration="506000" />
       <workItem from="1586793564564" duration="160000" />
-      <workItem from="1586793758449" duration="1991000" />
+      <workItem from="1586793758449" duration="2076000" />
+      <workItem from="1586872725062" duration="502000" />
     </task>
     <servers />
   </component>

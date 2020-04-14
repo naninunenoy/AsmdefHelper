@@ -15,7 +15,7 @@ namespace AsmdefHelper.SyncSolution.Editor {
             synchronizer = SyncVS.Synchronizer;
         }
 
-        [MenuItem("Window/Asmdef Helper/Sync C# Solution", priority = 1000000)]
+        [MenuItem("Window/Asmdef Helper/Sync C# Solution", priority = 3000)]
         public static void Sync() {
             Sync(true);
         }
