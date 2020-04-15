@@ -10,6 +10,7 @@
       <e p="AsmdefHelper.Example.Hoge.csproj" t="IncludeRecursive" />
       <e p="AsmdefHelper.Example.Piyo.csproj" t="IncludeRecursive" />
       <e p="AsmdefHelper.sln" t="IncludeFlat" />
+      <e p="AsmdefHelper.SyncSolution.Editor.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="AsmdefHelper" t="Include">
           <e p="DependencyGraph" t="Include">
@@ -45,11 +46,12 @@
           </e>
           <e p="SyncSolution" t="Include">
             <e p="Editor" t="Include">
-              <e p="AsmdefHelper.SyncSolution.Editor.asmref" t="Include" />
+              <e p="AsmdefHelper.SyncSolution.Editor.asmdef" t="Include" />
               <e p="SyncSolutionUtilities.cs" t="Include" />
             </e>
           </e>
           <e p="Unity.InternalAPIEditorBridgeDev.001" t="Include">
+            <e p="SolutionSynchronizerWrapper.cs" t="Include" />
             <e p="Unity.InternalAPIEditorBridgeDev.001.asmdef" t="Include" />
           </e>
         </e>

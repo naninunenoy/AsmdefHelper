@@ -2,18 +2,13 @@
 using System.IO;
 using System.Linq;
 using UnityEditor;
-using UnityEditor.VisualStudioIntegration;
 using UnityEngine;
+using AsmdefHelper.UnityInternal;
 
 // https://forum.unity.com/threads/solved-unity-not-generating-sln-file-from-assets-open-c-project.538487/
 // Thank you Flexford!
 namespace AsmdefHelper.SyncSolution.Editor {
     public static class SyncSolutionUtilities {
-        static SolutionSynchronizer synchronizer;
-
-        static SyncSolutionUtilities() {
-            synchronizer = SyncVS.Synchronizer;
-        }
 
         [MenuItem("Window/Asmdef Helper/Sync C# Solution", priority = 3000)]
         public static void Sync() {
@@ -43,14 +38,14 @@ namespace AsmdefHelper.SyncSolution.Editor {
             if (logsEnabled) {
                 Debug.Log($"Coll method: SyncVS.Sync()");
             }
-            SyncVS.SyncSolution();
+            SolutionSynchronizerWrapper.SyncSolution();
         }
 
         static void Call_SynchronizerSync(bool logsEnabled) {
             if (logsEnabled) {
                 Debug.Log($"Coll method: SyncVS.Synchronizer.Sync()");
             }
-            synchronizer?.Sync();
+            SolutionSynchronizerWrapper.SynchronizerSync();
         }
 
         static IEnumerable<FileInfo> GetFilesByExtensions(DirectoryInfo dir, params string[] extensions) {

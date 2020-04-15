@@ -2,9 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f71251e0-52ab-4cea-859f-4c363c01a121" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/AsmdefHelper/Unity.InternalAPIEditorBridgeDev.001/SolutionSynchronizerWrapper.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/AsmdefHelper/Unity.InternalAPIEditorBridgeDev.001/SolutionSynchronizerWrapper.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.AsmdefHelper/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AsmdefHelper/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AsmdefHelper/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AsmdefHelper/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AsmdefHelper/DependencyGraph/Editor/AsmdefGraphEditorWindow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AsmdefHelper/DependencyGraph/Editor/AsmdefGraphEditorWindow.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AsmdefHelper/MultipleEdit/Editor/AsmdefMultiEditWindow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AsmdefHelper/MultipleEdit/Editor/AsmdefMultiEditWindow.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AsmdefHelper/SyncSolution.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AsmdefHelper/SyncSolution/Editor/AsmdefHelper.SyncSolution.Editor.asmref" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AsmdefHelper/SyncSolution/Editor/AsmdefHelper.SyncSolution.Editor.asmref.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/AsmdefHelper/SyncSolution/Editor/SyncSolutionUtilities.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AsmdefHelper/SyncSolution/Editor/SyncSolutionUtilities.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -16,16 +20,18 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/AsmdefHelper/Unity.InternalAPIEditorBridgeDev.001/Unity.InternalAPIEditorBridgeDev.001.asmdef" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/AsmdefHelper/SyncSolution/Editor/SyncSolutionUtilities.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/AsmdefHelper/Example/Hoge/NewBehaviourScript.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/AsmdefHelper/DependencyGraph/Editor/AsmdefGraphEditorWindow.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/AsmdefHelper/DependencyGraph/Editor/AsmdefGraphView.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/AsmdefHelper/Example/NewBehaviourScript.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/AsmdefHelper/Example/Fuga/NewBehaviourScript.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/AsmdefHelper/SyncSolution/Editor/AsmdefHelper.SyncSolution.Editor.asmdef" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/AsmdefHelper/DependencyGraph/Editor/AsmdefDependency.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/AsmdefHelper/SyncSolution/Editor/SyncSolutionUtilities.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/AsmdefHelper/Example/Piyo/NewBehaviourScript.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/AsmdefHelper/MultipleEdit/Editor/AsmdefMultiEditWindow.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/AsmdefHelper/Unity.InternalAPIEditorBridgeDev.001/SolutionSynchronizerWrapper.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/AsmdefHelper/Unity.InternalAPIEditorBridgeDev.001/Unity.InternalAPIEditorBridgeDev.001.asmdef" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/AsmdefHelper/Example/NewBehaviourScript.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/AsmdefHelper/Example/Piyo/NewBehaviourScript.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/AsmdefHelper/DependencyGraph/Editor/AsmdefNode.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -39,8 +45,11 @@
         <option value="$PROJECT_DIR$/Assets/AsmdefHelper/Example/Hoge/NewBehaviourScript.cs" />
         <option value="$PROJECT_DIR$/Assets/AsmdefHelper/Example/Piyo/NewBehaviourScript.cs" />
         <option value="$PROJECT_DIR$/Assets/AsmdefHelper/MultipleEdit/Editor/AsmdefMultiEditWindow.cs" />
-        <option value="$PROJECT_DIR$/Assets/AsmdefHelper/SyncSolution/Editor/SyncSolutionUtilities.cs" />
         <option value="$PROJECT_DIR$/Assets/AsmdefHelper/DependencyGraph/Editor/AsmdefGraphEditorWindow.cs" />
+        <option value="$PROJECT_DIR$/Assets/AsmdefHelper/SyncSolution/Editor/UnityInternal/SolutionSynchronizerWrapper.cs" />
+        <option value="$PROJECT_DIR$/Assets/AsmdefHelper/SyncSolution/Editor/UnityInternal/SyncSolutionUtilities.cs" />
+        <option value="$PROJECT_DIR$/Assets/AsmdefHelper/Unity.InternalAPIEditorBridgeDev.001/SolutionSynchronizerWrapper.cs" />
+        <option value="$PROJECT_DIR$/Assets/AsmdefHelper/SyncSolution/Editor/SyncSolutionUtilities.cs" />
       </list>
     </option>
   </component>
@@ -105,7 +114,8 @@
       <workItem from="1586793017650" duration="506000" />
       <workItem from="1586793564564" duration="160000" />
       <workItem from="1586793758449" duration="2076000" />
-      <workItem from="1586872725062" duration="502000" />
+      <workItem from="1586872725062" duration="657000" />
+      <workItem from="1586951660938" duration="989000" />
     </task>
     <servers />
   </component>
@@ -114,4 +124,15 @@
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
 </project>
