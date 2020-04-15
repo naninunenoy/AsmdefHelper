@@ -1,0 +1,15 @@
+{
+    "name": "AsmdefHelper.Example.Hoge",
+    "references": [
+        "GUID:4326ab8b7972b7c4abe4e28df1a1c005"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

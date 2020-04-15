@@ -1,0 +1,17 @@
+{
+    "name": "AsmdefHelper.Example.Piyo",
+    "references": [
+        "GUID:4326ab8b7972b7c4abe4e28df1a1c005",
+        "GUID:119b4cf3f63d4c84d920ceae3917f02c",
+        "GUID:56e14997241bc0d4796fc4e693fcc806"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
