@@ -17,6 +17,7 @@ namespace AsmdefHelper.MultipleEdit.Editor {
         }
 
         [MenuItem("Window/Asmdef Helper/Open selected asmdef inspector view")]
+        [MenuItem("Assets/Asmdef Helper/Open selected asmdef inspector view")]
         public static void Open() {
             var asmdefs = Selection.GetFiltered(typeof(AssemblyDefinitionAsset), SelectionMode.TopLevel);
             if (!asmdefs.Any()) {
@@ -41,7 +42,6 @@ namespace AsmdefHelper.MultipleEdit.Editor {
                 w.AllApply();
                 w.CloseInspectorWindow();
             }
-
             windows.Clear();
         }
 
@@ -49,7 +49,6 @@ namespace AsmdefHelper.MultipleEdit.Editor {
             foreach (var w in windows) {
                 w.CloseInspectorWindow();
             }
-
             windows.Clear();
         }
     }
