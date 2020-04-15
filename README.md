@@ -1,4 +1,7 @@
 # Asmdef Helper
+
+<img src="https://user-images.githubusercontent.com/15327448/79349410-24950780-7f71-11ea-94be-056726828ec4.png" width="140" />
+
 Unity assembly definition utilities.
 
 This library solve inconvenience of assembly definition on unity.
