@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using AsmdefHelper.UnityInternal;
 using UnityEditor;
 using UnityEditor.Experimental.AssetImporters;
 using UnityEditorInternal;
@@ -9,8 +10,9 @@ namespace AsmdefHelper.MultipleEdit.Editor {
     public class AsmdefMultiEditWindow : EditorWindow {
         [MenuItem("Window/Asmdef Helper/Find all asmdef in project")]
         public static void Search() {
-            var projectBrowser = GetWindow<ProjectBrowser>();
-            projectBrowser.SetSearch("t:AssemblyDefinitionAsset");
+            var browser = CreateInstance<ProjectBrowserWrapper>();
+            browser.GetProjectBrowser();
+            browser.SetSearch("t:AssemblyDefinitionAsset");
         }
 
         [MenuItem("Window/Asmdef Helper/Open selected asmdef inspector view")]
@@ -23,9 +25,10 @@ namespace AsmdefHelper.MultipleEdit.Editor {
 
             foreach (var adf in asmdefs) {
                 Selection.objects = new[] { adf };
-                var w = CreateWindow<InspectorWindow>();
+                var w = CreateInstance<InspectorWindowWrapper>();
+                w.GetInspectorWindow();
                 // LockすることでInspectorWindowの表示を固定する
-                w.isLocked = true;
+                w.Lock(true);
             }
         }
     }
