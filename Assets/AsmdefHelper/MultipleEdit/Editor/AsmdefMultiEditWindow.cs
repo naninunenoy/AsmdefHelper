@@ -8,6 +8,8 @@ using UnityEngine;
 
 namespace AsmdefHelper.MultipleEdit.Editor {
     public class AsmdefMultiEditWindow : EditorWindow {
+        static IList<InspectorWindowWrapper> windows = new List<InspectorWindowWrapper>();
+
         [MenuItem("Window/Asmdef Helper/Find all asmdef in project")]
         public static void Search() {
             var browser = CreateInstance<ProjectBrowserWrapper>();
@@ -23,13 +25,33 @@ namespace AsmdefHelper.MultipleEdit.Editor {
                 return;
             }
 
+            CloseWindows();
             foreach (var adf in asmdefs) {
                 Selection.objects = new[] { adf };
                 var w = CreateInstance<InspectorWindowWrapper>();
                 w.GetInspectorWindow();
                 // LockすることでInspectorWindowの表示を固定する
                 w.Lock(true);
+                windows.Add(w);
             }
+        }
+
+        [MenuItem("Window/Asmdef Helper/Apply all asmdef and close")]
+        public static void Apply() {
+            foreach (var w in windows) {
+                w.AllApply();
+                w.CloseInspectorWindow();
+            }
+
+            windows.Clear();
+        }
+
+        static void CloseWindows() {
+            foreach (var w in windows) {
+                w.CloseInspectorWindow();
+            }
+
+            windows.Clear();
         }
     }
 }
