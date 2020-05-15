@@ -1,0 +1,9 @@
+{
+    "name": "dev.n5y.asmdefhelper",
+    "displayName": "AsmdefHelper",
+    "version": "0.2.1",
+    "unity": "2019.3",
+    "description": "Unity assembly definition utilities.",
+    "keywords": ["asmdef", "editor"],
+    "author" : { "name": "naninunenoy" }
+}
