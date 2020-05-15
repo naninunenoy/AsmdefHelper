@@ -42,7 +42,7 @@ I referred to this: [[SOLVED] Unity not generating .sln file from Assets > Open 
 ___
 
 ## Environment
-Unity 2019.3.4f1
+Unity 2019.3.12f1
 
 This library use unity internal class, so may be not work (or couse build error) depending your unity vresion.
 
