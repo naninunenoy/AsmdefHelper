@@ -1,0 +1,17 @@
+{
+    "name": "AsmdefHelper.CompileLocker.Editor",
+    "references": [
+        "GUID:211243abc45174c45b3a6c275ea126b9"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
