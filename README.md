@@ -39,10 +39,18 @@ Refresh .sln/.csproj in your project.
 I referred to this: [[SOLVED] Unity not generating .sln file from Assets > Open C# Project
 ](https://forum.unity.com/threads/solved-unity-not-generating-sln-file-from-assets-open-c-project.538487/)
 
+## Compile Locker
+
+Lock unity editor compile to edit asmdef.
+
+[Window] > [Asmdef Helper] > [Compile Lock]
+ * When checked, unity editor compile is stop.
+
+I referred to this: [decoc/CompileLocker.cs](https://gist.github.com/decoc/bde047ac7ad8c9bfce7eb408f2712424)
 ___
 
 ## Environment
-Unity 2019.3.12f1
+Unity 2020.1.6f1
 
 This library use unity internal class, so may be not work (or couse build error) depending your unity vresion.
 
