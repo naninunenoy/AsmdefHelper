@@ -11,6 +11,7 @@ namespace AsmdefHelper.CompileLocker.Editor {
         const string menuPath = "Window/Asmdef Helper/Compile Lock";
 
         [MenuItem("Window/Asmdef Helper/Compile Lock", false, 1)]
+        [MenuItem("Assets/Asmdef Helper/Compile Lock", false, 1000)]
         static void Lock() {
             var isLocked = Menu.GetChecked(menuPath);
             if (isLocked) {
