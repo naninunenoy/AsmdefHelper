@@ -9,7 +9,7 @@ using UnityEditor.UIElements;
 
 // original: https://github.com/baba-s/UniAssemblyDefinitionCreator
 public class AsmdefCustomCreateView : EditorWindow {
-    [MenuItem("Assets/Asmdef Helper/Create custom asmdef", false, 0)]
+    [MenuItem("Assets/AsmdefHelper/Create custom asmdef")]
     public static void ShowWindow() {
         var window = GetWindow<AsmdefCustomCreateView>();
         window.titleContent = new GUIContent("AsmdefCustomCreateView");

@@ -10,7 +10,7 @@ using AsmdefHelper.UnityInternal;
 namespace AsmdefHelper.SyncSolution.Editor {
     public static class SyncSolutionUtilities {
 
-        [MenuItem("Window/Asmdef Helper/Sync C# Solution", priority = 3000)]
+        [MenuItem("AsmdefHelper/Sync C# Solution", priority = 3000)]
         public static void Sync() {
             Sync(true);
         }

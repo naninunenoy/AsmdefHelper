@@ -8,10 +8,9 @@ using UnityEditor;
 /// </summary>
 namespace AsmdefHelper.CompileLocker.Editor {
     public static class CompileLocker {
-        const string menuPath = "Window/Asmdef Helper/Compile Lock";
+        const string menuPath = "AsmdefHelper/Compile Lock";
 
-        [MenuItem("Window/Asmdef Helper/Compile Lock", false, 1)]
-        [MenuItem("Assets/Asmdef Helper/Compile Lock", false, 1000)]
+        [MenuItem(menuPath, false, 1)]
         static void Lock() {
             var isLocked = Menu.GetChecked(menuPath);
             if (isLocked) {

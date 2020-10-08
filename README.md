@@ -10,7 +10,7 @@ This library solve inconvenience of assembly definition on unity.
 
 Unity assembly definition viewer.
 
-[Window] > [Asmdef Helper] > [Open DependencyGraph]
+[AsmdefHelper] > [Open DependencyGraph]
 
 Show assembly definition referances in your project like this.
 
@@ -22,10 +22,10 @@ You need to organize the nodes by yourself.
 
 Open multiple assembly definition inspector views for parallel editing.
 
-1. [Window] > [Asmdef Helper] > [Find all asmdef in project]
+1. [AsmdefHelper] > [Find all asmdef in project]
 2. All asmdef will appear in project browser.
 3. Pick up asmdef to edit.
-4. [Window] > [Asmdef Helper] > [Open selected asmdef inspector view]
+4. [AsmdefHelper] > [Open selected asmdef inspector view]
 5. Open asmdef inspector views and edit asmdef.
 
 <img src="https://user-images.githubusercontent.com/15327448/79342775-813ff480-7f68-11ea-851d-3e93b5948c0b.gif" width="450" />
@@ -34,7 +34,7 @@ Open multiple assembly definition inspector views for parallel editing.
 
 Refresh .sln/.csproj in your project.
 
-[Window] > [Asmdef Helper] > [Sync C# Solution]
+[AsmdefHelper] > [Sync C# Solution]
 
 I referred to this: [[SOLVED] Unity not generating .sln file from Assets > Open C# Project
 ](https://forum.unity.com/threads/solved-unity-not-generating-sln-file-from-assets-open-c-project.538487/)
@@ -43,7 +43,7 @@ I referred to this: [[SOLVED] Unity not generating .sln file from Assets > Open 
 
 Lock unity editor compile to edit asmdef.
 
-[Window] > [Asmdef Helper] > [Compile Lock]
+[AsmdefHelper] > [Compile Lock]
  * When checked, unity editor compile is stop.
 
 I referred to this: [decoc/CompileLocker.cs](https://gist.github.com/decoc/bde047ac7ad8c9bfce7eb408f2712424)
