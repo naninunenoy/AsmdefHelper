@@ -25,6 +25,11 @@ public class AsmdefCustomCreateView : EditorWindow {
         var visualTree =
             AssetDatabase.LoadAssetAtPath<VisualTreeAsset>(
                 "Assets/AsmdefHelper/CustomCreate/Editor/AsmdefCustomCreateView.uxml");
+        if (visualTree == null) {
+            visualTree =
+            AssetDatabase.LoadAssetAtPath<VisualTreeAsset>(
+                " Packages/dev.n5y.asmdefhelper/AsmdefHelper/CustomCreate/Editor/AsmdefCustomCreateView.uxml");
+        }
         VisualElement labelFromUXML = visualTree.Instantiate();
         root.Add(labelFromUXML);
 
