@@ -62,6 +62,11 @@ When you checked `Is Editor`, to be created an asmdef for only platform **Editor
 
 I referred to this: [【Unity】Assembly Definition を作成する時のコンパイル回数を抑えられるエディタ拡張「UniAssemblyDefinitionCreator」を GitHub に公開しました](https://baba-s.hatenablog.com/entry/2020/09/11/090000)
 
+And you can also rename an asdemf by one action.
+
+ * (right mouse button click) > [AsmdefHelper] > [Rename asmdef]
+ * input new name.
+ * click [Rename] button.
 ___
 
 ## Environment
