@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<engine:UXML
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:engine="UnityEngine.UIElements"
+    xmlns:editor="UnityEditor.UIElements"
+    xsi:noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd"
+>
+    <engine:Label class="AsmdefInfo" text="Input your asmdef info"/>
+    <engine:Box>
+        <engine:TextField class="PathTextField"  label="Path" text="ASMDEF_PATH_HERE"  readonly="true"/>
+        <engine:TextField class="NameTextField"  label="Name" text="ASMDEF_NAME_HERE"/>
+        <engine:Button class="RenameButton"  text="Rename" />
+    </engine:Box>
+</engine:UXML>
