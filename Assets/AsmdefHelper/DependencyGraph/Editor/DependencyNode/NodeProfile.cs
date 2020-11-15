@@ -32,5 +32,13 @@ namespace AsmdefHelper.DependencyGraph.Editor.DependencyNode {
                 return (Id.GetHashCode() * 397) ^ (Name != null ? Name.GetHashCode() : 0);
             }
         }
+
+        public static bool operator ==(NodeProfile x, NodeProfile y) {
+            return x.Equals(y);
+        }
+
+        public static bool operator !=(NodeProfile x, NodeProfile y) {
+            return !(x == y);
+        }
     }
 }

@@ -21,5 +21,13 @@ namespace AsmdefHelper.DependencyGraph.Editor.DependencyNode {
         public override string ToString() {
             return value.ToString();
         }
+
+        public static bool operator ==(NodeId x, NodeId y) {
+            return x.Equals(y);
+        }
+
+        public static bool operator !=(NodeId x, NodeId y) {
+            return !(x == y);
+        }
     }
 }
