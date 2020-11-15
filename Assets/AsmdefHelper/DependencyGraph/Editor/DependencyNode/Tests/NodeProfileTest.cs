@@ -9,8 +9,8 @@ namespace AsmdefHelper.DependencyGraph.Editor.DependencyNode.Tests {
         [Test]
         public void TestNodeProfile() {
             var nodeProfile = new NodeProfile(new NodeId(123), "testNode");
-            Assert.That(nodeProfile.id.value, Is.EqualTo(123));
-            Assert.That(nodeProfile.name, Is.EqualTo("testNode"));
+            Assert.That(nodeProfile.Id.value, Is.EqualTo(123));
+            Assert.That(nodeProfile.Name, Is.EqualTo("testNode"));
         }
 
         [Test]
@@ -23,6 +23,14 @@ namespace AsmdefHelper.DependencyGraph.Editor.DependencyNode.Tests {
             Assert.That(profile1, Is.Not.EqualTo(profile2));
             Assert.That(profile1, Is.Not.EqualTo(profile3));
             Assert.That(profile1, Is.EqualTo(profile4));
+        }
+
+
+        [Test]
+        public void TestNodeProfileName() {
+            var nodeProfile = new NodeProfile(new NodeId(123), "hoge");
+            nodeProfile.Name = "testNode";
+            Assert.That(nodeProfile.Name, Is.EqualTo("testNode"));
         }
     }
 }
