@@ -7,7 +7,7 @@ using UnityEngine;
 using UnityEngine.TestTools;
 
 namespace AsmdefHelper.DependencyGraph.Editor.DependencyNode.Tests {
-    public class LinerSortTest {
+    public class LinerSortStrategyTest {
         const float d = 10.0F;
         const float w = 10.0F;
         const float h = 10.0F;
@@ -19,7 +19,6 @@ namespace AsmdefHelper.DependencyGraph.Editor.DependencyNode.Tests {
             Nodes.Init();
             sortStrategy = new LinerSortStrategy(Vector2.zero, d, w, h);
         }
-
 
         [Test]
         public void TestLinerNodeDependency() {
