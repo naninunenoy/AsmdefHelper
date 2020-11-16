@@ -48,5 +48,24 @@ namespace AsmdefHelper.DependencyGraph.Editor.DependencyNode.Tests {
                 n.Destinations.Clear();
             }
         }
+
+        public static void SetSomeNodeDependency() {
+            /*
+             *     ┌->[1]-┐
+             * [0]-┴->[2]-┴->[4]--->[5]--->[6]
+             *         │             │
+             *         V             │
+             *        [3]<-----------┘
+             *
+             * [7]--->[8]    [9]
+             *
+             */
+            Nodes._0.SetRequireNodes(new[] { Profiles._1, Profiles._2 });
+            Nodes._1.SetRequireNodes(new[] { Profiles._4 });
+            Nodes._2.SetRequireNodes(new[] { Profiles._3, Profiles._4 });
+            Nodes._4.SetRequireNodes(new[] { Profiles._5 });
+            Nodes._5.SetRequireNodes(new[] { Profiles._3, Profiles._6 });
+            Nodes._7.SetRequireNodes(new[] { Profiles._8 });
+        }
     }
 }
