@@ -1,20 +1,20 @@
-﻿using UnityEditor.Experimental.GraphView;
+﻿using AsmdefHelper.DependencyGraph.Editor.NodeView;
+using UnityEditor.Experimental.GraphView;
+using UnityEngine.UIElements;
 
 namespace AsmdefHelper.DependencyGraph.Editor {
-    public class AsmdefNode : Node {
-        public readonly Port LeftPort;
-        public readonly Port RightPort;
+    public class AsmdefNode : UiElementsNodeView, IAsmdefNodeView {
+        public IPort LeftPort { get; }
+        public IPort RightPort { get; }
 
-        public AsmdefNode(string nodeName) {
-            title = nodeName;
+        public AsmdefNode(string nodeName, VisualElement parentContentContainer) {
+            Label = nodeName;
 
-            LeftPort = Port.Create<Edge>(Orientation.Horizontal, Direction.Output, Port.Capacity.Multi, typeof(Port));
-            LeftPort.portName = "Ref By";
-            outputContainer.Add(LeftPort); // as right side
+            LeftPort = new GraphViewPort(parentContentContainer, Direction.Input) { Label = "Ref By" };
+            inputContainer.Add(LeftPort as Port); // as right side
 
-            RightPort = Port.Create<Edge>(Orientation.Horizontal, Direction.Input, Port.Capacity.Multi, typeof(Port));
-            RightPort.portName = "Ref To";
-            inputContainer.Add(RightPort); // as left side
+            RightPort = new GraphViewPort(parentContentContainer, Direction.Output) { Label = "Ref To" };
+            outputContainer.Add(RightPort as Port); // as left side
         }
     }
 }

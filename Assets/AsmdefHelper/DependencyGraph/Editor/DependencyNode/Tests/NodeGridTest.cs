@@ -10,9 +10,8 @@ namespace AsmdefHelper.DependencyGraph.Editor.DependencyNode.Tests {
         [Test]
         public void TestNodeGrid() {
             const float e = 0.000001F;
-            var nodeGrid = new NodeGrid(10.0F, 10.0F, 4);
+            var nodeGrid = new NodeGrid(10.0F, 10.0F, 10.0F, 4);
             Assert.That(nodeGrid.GridCount, Is.EqualTo(4));
-            Assert.That(nodeGrid.GridSize, Is.EqualTo(15.0F).Within(e));
             var grids = nodeGrid.GridCenterPositions();
             Assert.That(grids[0].x, Is.EqualTo(0.0F).Within(e));
             Assert.That(grids[0].y, Is.EqualTo(0.0F).Within(e));

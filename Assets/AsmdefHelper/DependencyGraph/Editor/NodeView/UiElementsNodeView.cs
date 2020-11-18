@@ -1,25 +1,26 @@
-using UnityEditor.Graphs;
+using UnityEditor.Experimental.GraphView;
+using UnityEngine;
 
 namespace AsmdefHelper.DependencyGraph.Editor.NodeView {
     public class UiElementsNodeView : Node, INodeView {
 
-        string INodeView.Label {
+        public string Label {
             get => title;
             set => title = value;
         }
 
-        float IRect.PositionX {
-            get => position.x;
-            set => position.x = value;
+        public float PositionX {
+            get => transform.position.x;
+            set => transform.position = new Vector3(value, PositionY, transform.position.z);
         }
 
-        float IRect.PositionY {
-            get => position.y;
-            set => position.y = value;
+        public float PositionY {
+            get => transform.position.y;
+            set => transform.position = new Vector3(PositionX, value, transform.position.z);
         }
 
-        float IRect.Height => position.height;
+        public float Height => contentRect.height;
 
-        float IRect.Width => position.width;
+        public float Width => contentRect.width;
     }
 }

@@ -13,16 +13,8 @@ namespace AsmdefHelper.DependencyGraph.Editor {
         void OnEnable() {
             // .asmdefをすべて取得
             var asmdefs = CompilationPipeline.GetAssemblies();
-            var allDependencies = new List<AsmdefDependency>();
-            foreach (var asmdef in asmdefs) {
-                allDependencies.Add(
-                    new AsmdefDependency(
-                        asmdef.name,
-                        asmdef.assemblyReferences?.Select(x => x.name) ?? new string[0])
-                    );
-            }
             // viewの作成
-            var graphView = new AsmdefGraphView(allDependencies) {
+            var graphView = new AsmdefGraphView(asmdefs) {
                 style = { flexGrow = 1 }
             };
             rootVisualElement.Add(graphView);

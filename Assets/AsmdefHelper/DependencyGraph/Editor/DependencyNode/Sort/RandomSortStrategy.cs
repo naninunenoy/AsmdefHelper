@@ -19,7 +19,7 @@ namespace AsmdefHelper.DependencyGraph.Editor.DependencyNode.Sort {
             var nodeArr = nodes
                 .Select(x => new SortedNode { Profile = x.Profile, Position = originPosition })
                 .ToArray();
-            var nodeGrid = new NodeGrid(nodeWidth, basicDistance, nodeArr.Length);
+            var nodeGrid = new NodeGrid(nodeWidth, nodeHeight, basicDistance, nodeArr.Length);
             var positions = nodeGrid.GridCenterPositions();
             var indexes = Enumerable.Range(0, positions.Count).ToList();
 

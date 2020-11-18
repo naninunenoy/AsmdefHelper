@@ -1,10 +1,17 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
+using AsmdefHelper.DependencyGraph.Editor.DependencyNode;
+using AsmdefHelper.DependencyGraph.Editor.DependencyNode.Sort;
+using AsmdefHelper.DependencyGraph.Editor.NodeView;
+using UnityEditor.Compilation;
 using UnityEditor.Experimental.GraphView;
+using UnityEngine;
 using UnityEngine.UIElements;
 
 namespace AsmdefHelper.DependencyGraph.Editor {
-    public class AsmdefGraphView : GraphView {
-        public AsmdefGraphView(IEnumerable<AsmdefDependency> asmdefs) : base() {
+    public sealed class AsmdefGraphView : GraphView {
+        public AsmdefGraphView(IEnumerable<Assembly> assemblies) {
+            var assemblyArr = assemblies.ToArray();
             // zoom可能に
             SetupZoom(ContentZoomer.DefaultMinScale, ContentZoomer.DefaultMaxScale);
             // 背景を黒に
@@ -12,24 +19,50 @@ namespace AsmdefHelper.DependencyGraph.Editor {
             // ドラッグによる移動可能に
             this.AddManipulator(new SelectionDragger());
             // ノードの追加
-            var asmdefNodeDict = new Dictionary<string, AsmdefNode>();
-            foreach (var asmdef in asmdefs) {
-                var node = new AsmdefNode(asmdef.DependsFrom);
+            var asmdefNodeDict = new Dictionary<string, IAsmdefNodeView>();
+            foreach (var asm in assemblyArr) {
+                var node = new AsmdefNode(asm.name, contentContainer);
                 AddElement(node);
                 asmdefNodeDict.Add(node.title, node);
             }
-            // 依存先にラインを追加
-            var nodeApapter = new NodeAdapter();
-            foreach (var asmdef in asmdefs) {
-                if (!asmdefNodeDict.TryGetValue(asmdef.DependsFrom, out var fromNode)) {
+            // 依存の整理
+            var nodeProfiles = assemblyArr
+                .Select((x, i) => new NodeProfile(new NodeId(i), x.name))
+                .ToDictionary(x => x.Name);
+            var dependencies = new List<IDependencyNode>(nodeProfiles.Count);
+            // 依存先の設定
+            foreach (var asm in assemblyArr) {
+                if (nodeProfiles.TryGetValue(asm.name, out var profile)) {
+                    var requireProfiles = asm.assemblyReferences
+                        .Where(x => nodeProfiles.ContainsKey(x.name))
+                        .Select(x => nodeProfiles[x.name]);
+                    var dep = new HashSetDependencyNode(profile);
+                    dep.SetRequireNodes(requireProfiles);
+                    dependencies.Add(dep);
+                }
+            }
+            // 依存元の設定
+            NodeProcessor.SetBeRequiredNodes(dependencies);
+
+            // 依存先にのみラインを追加
+            foreach (var dep in dependencies) {
+                if (!asmdefNodeDict.TryGetValue(dep.Profile.Name, out var fromNode)) {
                     continue;
                 }
-                foreach (var dependents in asmdef.DependsTo) {
-                    if (!asmdefNodeDict.TryGetValue(dependents, out var toNode)) {
+                foreach (var dest in dep.Destinations) {
+                    if (!asmdefNodeDict.TryGetValue(dest.Name, out var toNode)) {
                         continue;
                     }
-                    var edge = fromNode.RightPort.ConnectTo(toNode.LeftPort);
-                    contentContainer.Add(edge);// これが無いと線が表示されない
+                    fromNode.RightPort.Connect(toNode.LeftPort);
+                }
+            }
+
+            // ノードの場所を整列
+            var sortStrategy = new RandomSortStrategy(Vector2.zero, 100, 600, 100);
+            var sortedNode = sortStrategy.Sort(dependencies);
+            foreach (var node in sortedNode) {
+                if (asmdefNodeDict.TryGetValue(node.Profile.Name, out var nodeView)) {
+                    nodeView.SetPositionXY(node.Position);
                 }
             }
         }

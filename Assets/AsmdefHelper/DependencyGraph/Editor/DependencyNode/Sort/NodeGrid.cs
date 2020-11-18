@@ -3,12 +3,16 @@ using UnityEngine;
 
 namespace AsmdefHelper.DependencyGraph.Editor.DependencyNode.Sort {
     public class NodeGrid {
-        public readonly float GridSize;
+        public readonly float GridWidth;
+        public readonly float GridHeight;
+        public readonly float Distance;
         readonly int gridSideCount;
         public readonly int GridCount;
 
-        public NodeGrid(float nodeWidth, float nodeDistance, int nodeCount) {
-            GridSize = nodeDistance + nodeWidth / 2.0F;
+        public NodeGrid(float nodeWidth, float nodeHeight, float nodeDistance, int nodeCount) {
+            GridWidth = nodeWidth;
+            GridHeight = nodeHeight;
+            Distance = nodeDistance;
             gridSideCount = SquareValueProvider.ProvideNearestSquareValue(nodeCount);
             GridCount = gridSideCount * gridSideCount;
         }
@@ -21,10 +25,10 @@ namespace AsmdefHelper.DependencyGraph.Editor.DependencyNode.Sort {
                 var x = 0.0F;
                 for (var j = 0; j < gridSideCount; j++) {
                     grids[index] = new Vector2(x, y);
-                    x += GridSize;
+                    x += (GridWidth/2.0F) + Distance;
                     index++;
                 }
-                y += GridSize;
+                y += (GridHeight/2.0F) + Distance;;
             }
             return grids;
         }
