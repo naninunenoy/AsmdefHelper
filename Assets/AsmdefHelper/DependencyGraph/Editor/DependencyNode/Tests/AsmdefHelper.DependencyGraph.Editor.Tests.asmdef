@@ -1,0 +1,17 @@
+﻿{
+    "name": "AsmdefHelper.DependencyGraph.Editor.Tests",
+    "references": [
+        "GUID:53e113411e7b0e947975fcd498b539aa"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
