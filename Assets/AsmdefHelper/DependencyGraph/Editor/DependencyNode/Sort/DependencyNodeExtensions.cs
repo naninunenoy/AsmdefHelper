@@ -1,4 +1,6 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
+using UnityEditor.Graphs;
 
 namespace AsmdefHelper.DependencyGraph.Editor.DependencyNode.Sort {
     public static class DependencyNodeExtensions {
@@ -17,6 +19,12 @@ namespace AsmdefHelper.DependencyGraph.Editor.DependencyNode.Sort {
         public static bool ContainsSelfReference(this IDependencyNode node) {
             return node.Sources.Any(x => x == node.Profile) ||
                    node.Destinations.Any(x => x == node.Profile);
+        }
+        public static IEnumerable<NodeProfile> ConnectedNodes(this IDependencyNode node) {
+            return node.Sources.Concat(node.Destinations);
+        }
+        public static bool IsConnectedTo(this IDependencyNode node, NodeProfile nodeProfile) {
+            return node.Sources.Contains(nodeProfile) || node.Destinations.Contains(nodeProfile);
         }
     }
 }

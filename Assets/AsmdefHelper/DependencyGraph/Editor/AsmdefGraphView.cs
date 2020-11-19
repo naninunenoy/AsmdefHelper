@@ -58,7 +58,7 @@ namespace AsmdefHelper.DependencyGraph.Editor {
             }
 
             // ノードの場所を整列
-            var sortStrategy = new RandomSortStrategy(Vector2.zero, 100, 600, 100);
+            var sortStrategy = new AlignSortStrategy(AlignParam.Default(),  Vector2.zero);
             var sortedNode = sortStrategy.Sort(dependencies);
             foreach (var node in sortedNode) {
                 if (asmdefNodeDict.TryGetValue(node.Profile.Name, out var nodeView)) {
