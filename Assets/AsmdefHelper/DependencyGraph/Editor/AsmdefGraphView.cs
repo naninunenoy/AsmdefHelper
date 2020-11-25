@@ -18,6 +18,8 @@ namespace AsmdefHelper.DependencyGraph.Editor {
             Insert(0, new GridBackground());
             // ドラッグによる移動可能に
             this.AddManipulator(new SelectionDragger());
+            // ドラッグで描画範囲を動かせるように
+            this.AddManipulator(new ContentDragger());
             // ノードの追加
             var asmdefNodeDict = new Dictionary<string, IAsmdefNodeView>();
             foreach (var asm in assemblyArr) {
