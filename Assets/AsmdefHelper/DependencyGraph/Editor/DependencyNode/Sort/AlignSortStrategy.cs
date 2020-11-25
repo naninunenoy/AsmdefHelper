@@ -18,6 +18,7 @@ namespace AsmdefHelper.DependencyGraph.Editor.DependencyNode.Sort {
             var posDict = nodeArr.ToDictionary(x => x.Profile, _ => originPosition);
 
             // まず順番に整列させる
+            nodeArr = nodeArr.OrderBy(x => x.Profile.Name).ToArray();
             var nodeGrid = new NodeGrid(alignParam.nodeWidth, alignParam.nodeHeight, alignParam.basicDistance, nodeArr.Length);
             for (var i = 0; i < nodeArr.Length; i++) {
                 posDict[nodeArr[i].Profile] += nodeGrid.GridCenterPositions()[i];
