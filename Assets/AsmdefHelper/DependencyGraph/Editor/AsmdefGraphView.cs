@@ -59,6 +59,14 @@ namespace AsmdefHelper.DependencyGraph.Editor {
                 }
             }
 
+            // Portに接続数を追記
+            foreach (var dep in dependencies) {
+                if (asmdefNodeDict.TryGetValue(dep.Profile.Name, out var node)) {
+                    node.LeftPort.Label = $"RefBy({dep.Sources.Count})";
+                    node.RightPort.Label = $"RefTo({dep.Destinations.Count})";
+                }
+            }
+
             // ノードの場所を整列
             var sortStrategy = new AlignSortStrategy(AlignParam.Default(),  Vector2.zero);
             var sortedNode = sortStrategy.Sort(dependencies);
