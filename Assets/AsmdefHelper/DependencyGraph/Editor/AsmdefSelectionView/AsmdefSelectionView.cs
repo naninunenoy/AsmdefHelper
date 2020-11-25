@@ -5,17 +5,18 @@ using System.Linq;
 using System.Threading.Tasks;
 using UnityEditor;
 using UnityEditor.Compilation;
-using UnityEngine;
 using UnityEngine.UIElements;
 
 namespace AsmdefHelper.DependencyGraph.Editor {
     public class AsmdefSelectionView : EditorWindow {
+        const int toggleCount = 1000;
         static EditorWindow graphWindow;
         public void OnEnable() {
             graphWindow = GetWindow<AsmdefGraphEditorWindow>();
-        }
 
-        VisualTreeAsset LoadVisualTreeAsset() {
+            // Each editor window contains a root VisualElement object
+            VisualElement root = rootVisualElement;
+
             // Import UXML
             var visualTree =
                 AssetDatabase.LoadAssetAtPath<VisualTreeAsset>(
@@ -25,20 +26,22 @@ namespace AsmdefHelper.DependencyGraph.Editor {
                     AssetDatabase.LoadAssetAtPath<VisualTreeAsset>(
                         "Packages/dev.n5y.asmdefhelper/AsmdefHelper/DependencyGraph/Editor/AsmdefSelectionView/AsmdefSelectionView.uxml");
             }
-            return visualTree;
+
+            VisualElement labelFromUXML = visualTree.Instantiate();
+            root.Add(labelFromUXML);
         }
 
         public void SetAsmdef(Assembly[] assemblies) {
-            VisualElement scroll = new ScrollView();
-            rootVisualElement.Add(scroll);
-            var sorted = assemblies.OrderBy(x => x.name);
-            foreach (var assembly in sorted) {
-                var elm = LoadVisualTreeAsset().Instantiate();
-                var toggle = elm.Q<Toggle>(className: "CheckBox");
-                var label = elm.Q<Label>(className: "NameLabel");
-                toggle.value = true;
-                label.text = assembly.name;
-                scroll.Add(elm);
+            var sortedAssemblies = assemblies.OrderBy(x => x.name).ToArray();
+            var scrollView = rootVisualElement.Q<ScrollView>(className: "ScrollView");
+            for (var i = 0; i < toggleCount; i++) {
+                var toggle = rootVisualElement.Q<Toggle>(className: $"toggle{i}");
+                if (i < sortedAssemblies.Length) {
+                    toggle.text = sortedAssemblies[i].name;
+                    toggle.value = true;
+                } else {
+                    scrollView.Remove(toggle);
+                }
             }
         }
 
