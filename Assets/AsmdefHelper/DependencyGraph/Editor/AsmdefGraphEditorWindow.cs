@@ -1,11 +1,11 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using UnityEditor;
+﻿using UnityEditor;
 using UnityEditor.Compilation;
 
 namespace AsmdefHelper.DependencyGraph.Editor {
-    public class AsmdefGraphEditorWindow : EditorWindow {
+    public class AsmdefGraphEditorWindow : EditorWindow, IToggleCheckDelegate {
         static AsmdefSelectionView selectionWindow;
+        AsmdefGraphView graphView;
+
         [MenuItem("AsmdefHelper/Open DependencyGraph", priority = 2000)]
         public static void Open() {
             GetWindow<AsmdefGraphEditorWindow>("Asmdef Dependency");
@@ -15,14 +15,14 @@ namespace AsmdefHelper.DependencyGraph.Editor {
             // .asmdefをすべて取得
             var asmdefs = CompilationPipeline.GetAssemblies();
             // viewの作成
-            var graphView = new AsmdefGraphView(asmdefs) {
+            graphView = new AsmdefGraphView(asmdefs) {
                 style = { flexGrow = 1 }
             };
             rootVisualElement.Add(graphView);
 
             // 選択ウィンドウも作成
             selectionWindow = GetWindow<AsmdefSelectionView>("Asmdef Selection");
-            selectionWindow.SetAsmdef(asmdefs);
+            selectionWindow.SetAsmdef(asmdefs, this);
         }
 
         // 片方を閉じる
@@ -31,6 +31,10 @@ namespace AsmdefHelper.DependencyGraph.Editor {
                 selectionWindow.Close();
             }
             selectionWindow = null;
+        }
+
+        void IToggleCheckDelegate.OnSelectionChanged(string label, bool isChecked) {
+            graphView.SetNodeVisibility(label, isChecked);
         }
     }
 }

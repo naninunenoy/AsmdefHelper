@@ -10,6 +10,7 @@ using UnityEngine.UIElements;
 
 namespace AsmdefHelper.DependencyGraph.Editor {
     public sealed class AsmdefGraphView : GraphView {
+        readonly Dictionary<string, IAsmdefNodeView> asmdefNodeDict;
         public AsmdefGraphView(IEnumerable<Assembly> assemblies) {
             var assemblyArr = assemblies.ToArray();
             // zoom可能に
@@ -21,7 +22,7 @@ namespace AsmdefHelper.DependencyGraph.Editor {
             // ドラッグで描画範囲を動かせるように
             this.AddManipulator(new ContentDragger());
             // ノードの追加
-            var asmdefNodeDict = new Dictionary<string, IAsmdefNodeView>();
+            asmdefNodeDict = new Dictionary<string, IAsmdefNodeView>();
             foreach (var asm in assemblyArr) {
                 var node = new AsmdefNode(asm.name, contentContainer);
                 AddElement(node);
@@ -74,6 +75,12 @@ namespace AsmdefHelper.DependencyGraph.Editor {
                 if (asmdefNodeDict.TryGetValue(node.Profile.Name, out var nodeView)) {
                     nodeView.SetPositionXY(node.Position);
                 }
+            }
+        }
+
+        public void SetNodeVisibility(string nodeName, bool visible_) {
+            if (asmdefNodeDict.TryGetValue(nodeName, out var node)) {
+                node.Visibility = visible_;
             }
         }
 
