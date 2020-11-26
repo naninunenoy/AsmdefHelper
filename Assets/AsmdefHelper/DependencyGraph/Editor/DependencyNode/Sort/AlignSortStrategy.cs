@@ -44,6 +44,15 @@ namespace AsmdefHelper.DependencyGraph.Editor.DependencyNode.Sort {
                 }
             }
 
+            // 接続数に応じて左右に移動させる
+            // ref to が多いものが左に、ref by が多いものが右に
+            const float factor = 60.0F;
+            foreach (var dep in nodeArr) {
+                var score = (dep.Sources.Count - dep.Destinations.Count) * factor;
+                var p = posDict[dep.Profile];
+                posDict[dep.Profile] = new Vector2(p.x + score, p.y);
+            }
+
             return posDict.Select(x => new SortedNode { Profile = x.Key, Position = x.Value });
         }
     }
