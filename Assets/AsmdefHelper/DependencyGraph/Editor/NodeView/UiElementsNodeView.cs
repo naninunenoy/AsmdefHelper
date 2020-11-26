@@ -23,7 +23,7 @@ namespace AsmdefHelper.DependencyGraph.Editor.NodeView {
 
         public float Width => contentRect.width;
 
-        public bool Visibility {
+        public virtual bool Visibility {
             get => visible;
             set => visible = value;
         }

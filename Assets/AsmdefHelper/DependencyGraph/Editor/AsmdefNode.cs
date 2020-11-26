@@ -4,17 +4,34 @@ using UnityEngine.UIElements;
 
 namespace AsmdefHelper.DependencyGraph.Editor {
     public class AsmdefNode : UiElementsNodeView, IAsmdefNodeView {
-        public IPort LeftPort { get; }
-        public IPort RightPort { get; }
+        readonly GraphViewPort leftPort;
+        readonly GraphViewPort rightPort;
+        public IPort LeftPort => leftPort;
+        public IPort RightPort => rightPort;
 
         public AsmdefNode(string nodeName, VisualElement parentContentContainer) {
             Label = nodeName;
 
-            LeftPort = new GraphViewPort(parentContentContainer, Direction.Input) { Label = "Ref By" };
+            leftPort = new GraphViewPort(parentContentContainer, Direction.Input) { Label = "Ref By" };
             inputContainer.Add(LeftPort as Port); // as right side
 
-            RightPort = new GraphViewPort(parentContentContainer, Direction.Output) { Label = "Ref To" };
+            rightPort = new GraphViewPort(parentContentContainer, Direction.Output) { Label = "Ref To" };
             outputContainer.Add(RightPort as Port); // as left side
+        }
+
+        public override bool Visibility {
+            get => base.Visibility;
+            set {
+                base.Visibility = value;
+                // right(output)
+                foreach (var edge in rightPort.connections) {
+                    edge.visible = edge.input.node.visible & visible;
+                }
+                // left(input)
+                foreach (var edge in leftPort.connections) {
+                    edge.visible = edge.output.node.visible & visible;
+                }
+            }
         }
     }
 }
