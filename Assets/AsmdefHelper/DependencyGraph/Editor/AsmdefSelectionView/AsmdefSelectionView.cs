@@ -3,8 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AsmdefHelper.DependencyGraph.Editor.DependencyNode;
 using UnityEditor;
 using UnityEditor.Compilation;
+using UnityEngine;
 using UnityEngine.UIElements;
 
 namespace AsmdefHelper.DependencyGraph.Editor {
@@ -12,7 +14,8 @@ namespace AsmdefHelper.DependencyGraph.Editor {
         const int toggleCount = 1000;
         static EditorWindow graphWindow;
 
-        Dictionary<string, (bool, Toggle)> toggleDict;
+        Dictionary<string, (bool, IToggle)> topToggleDict;
+        Dictionary<string, (bool, IToggle)> toggleDict;
         IToggleCheckDelegate toggleDelegate;
         public void OnEnable() {
             graphWindow = GetWindow<AsmdefGraphEditorWindow>();
@@ -35,7 +38,7 @@ namespace AsmdefHelper.DependencyGraph.Editor {
         }
 
         public void SetAsmdef(Assembly[] assemblies, IToggleCheckDelegate toggleDelegate_) {
-            toggleDict = new Dictionary<string, (bool, Toggle)>(assemblies.Length);
+            toggleDict = new Dictionary<string, (bool, IToggle)>(assemblies.Length);
             var sortedAssemblies = assemblies.OrderBy(x => x.name).ToArray();
             var scrollView = rootVisualElement.Q<ScrollView>(className: "ScrollView");
             for (var i = 0; i < toggleCount; i++) {
@@ -44,21 +47,65 @@ namespace AsmdefHelper.DependencyGraph.Editor {
                     var assemblyName = sortedAssemblies[i].name;
                     toggle.text = assemblyName;
                     toggle.value = true;
-                    toggleDict.Add(assemblyName, (true, toggle));
+                    toggleDict.Add(assemblyName, (true, new UiElementToggle(toggle)));
                 } else {
                     scrollView.Remove(toggle);
                 }
+            }
+
+            // グループに分ける
+            topToggleDict = new Dictionary<string, (bool, IToggle)>();
+            var group = new DomainGroup();
+            group.Create(sortedAssemblies.Select(x => x.name));
+            var tops = group.GetTopDomainsWithSomeSubDomains().ToArray();
+            foreach (var top in tops) {
+                var topToggle = new Toggle { text = top, value = true};
+                var slaveToggles = new List<IToggle>();
+                Toggle firstToggle = null;
+                var domains = group.GetSubDomains(top);
+                foreach (var domain in domains) {
+                    if (toggleDict.TryGetValue(domain.FullName, out var x)) {
+                        var (_, toggle) = x;
+                        slaveToggles.Add(toggle);
+                        if (firstToggle == null && toggle is UiElementToggle y) {
+                            firstToggle = y.Toggle;
+                        }
+                    }
+                }
+                var toggleGroup = new ToggleGroup(new UiElementToggle(topToggle), slaveToggles);
+                if (firstToggle != null) {
+                    var index = scrollView.IndexOf(firstToggle);
+                    scrollView.Insert(index, topToggle);
+
+                }
+                topToggleDict.Add(top, (true, toggleGroup));
             }
 
             toggleDelegate = toggleDelegate_;
         }
 
         void OnGUI() {
+            var updated = new Dictionary<string, (bool, IToggle)>();
+            foreach (var pair in topToggleDict) {
+                var (prev, toggle) = pair.Value;
+                var current = toggle.IsOn;
+                if (prev != current) {
+                    // groupのtopのtoggleのisOnを明示的にsetすることで、子のtoggleにも反映される
+                    toggle.IsOn = current;
+                    updated.Add(pair.Key, (current, toggle));
+                }
+            }
+            // 状態更新
+            if (updated.Any()) {
+                foreach (var pair in updated) {
+                    topToggleDict[pair.Key] = pair.Value;
+                }
+            }
             // toggle の更新を監視 (onValueChangedが無さそう)
-            var updated = new Dictionary<string, (bool, Toggle)>();
+            updated.Clear();
             foreach (var pair in toggleDict) {
                 var (prev, toggle) = pair.Value;
-                var current = toggle.value;
+                var current = toggle.IsOn;
                 if (prev != current) {
                     toggleDelegate?.OnSelectionChanged(pair.Key, current);
                     updated.Add(pair.Key, (current, toggle));

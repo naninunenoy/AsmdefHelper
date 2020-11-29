@@ -57,12 +57,11 @@ namespace AsmdefHelper.DependencyGraph.Editor.DependencyNode {
             .Keys
             .Except(GetSoloDomains());
 
-        public IEnumerable<string> GetSubDomains(string topDomain) {
-            if (dict.TryGetValue(topDomain, out var list))
-            {
-                return list.Select(x => x.SubDomain);
+        public IEnumerable<DomainUnit> GetSubDomains(string topDomain) {
+            if (dict.TryGetValue(topDomain, out var list)) {
+                return list;
             }
-            return new string[0];
+            return new DomainUnit[0];
         }
     }
 }
