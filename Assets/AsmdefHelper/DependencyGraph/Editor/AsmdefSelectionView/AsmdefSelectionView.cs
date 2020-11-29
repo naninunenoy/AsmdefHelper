@@ -64,20 +64,32 @@ namespace AsmdefHelper.DependencyGraph.Editor {
                 Toggle firstToggle = null;
                 var domains = group.GetSubDomains(top);
                 foreach (var domain in domains) {
+                    var isLast = domains.Last() == domain;
                     if (toggleDict.TryGetValue(domain.FullName, out var x)) {
                         var (_, toggle) = x;
+                        var keisen = isLast ? "└" : "├";
+                        toggle.Name = domain.HasSubDomain() ? $"{keisen} {domain.SubDomain}" : toggle.Name;
                         slaveToggles.Add(toggle);
                         if (firstToggle == null && toggle is UiElementToggle y) {
                             firstToggle = y.Toggle;
                         }
                     }
                 }
+
                 var toggleGroup = new ToggleGroup(new UiElementToggle(topToggle), slaveToggles);
                 if (firstToggle != null) {
                     var index = scrollView.IndexOf(firstToggle);
+                    // グループに属する toggle は box に入れる
+                    var box = new Box();
                     scrollView.Insert(index, topToggle);
-
+                    scrollView.Insert(index + 1, box);
+                    foreach (var slaveToggle in slaveToggles) {
+                        if (slaveToggle is UiElementToggle x) {
+                            box.Add(x.Toggle);
+                        }
+                    }
                 }
+
                 topToggleDict.Add(top, (true, toggleGroup));
             }
 
