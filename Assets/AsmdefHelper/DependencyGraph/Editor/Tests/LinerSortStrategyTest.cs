@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Linq;
+using AsmdefHelper.DependencyGraph.Editor.DependencyNode;
 using AsmdefHelper.DependencyGraph.Editor.DependencyNode.Sort;
 using NUnit.Framework;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.TestTools;
 
-namespace AsmdefHelper.DependencyGraph.Editor.DependencyNode.Tests {
+namespace AsmdefHelper.DependencyGraph.Editor.Tests {
     public class LinerSortStrategyTest {
         const float d = 10.0F;
         const float w = 10.0F;

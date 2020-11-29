@@ -1,10 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using AsmdefHelper.DependencyGraph.Editor.DependencyNode;
 using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.TestTools;
 
-namespace AsmdefHelper.DependencyGraph.Editor.DependencyNode.Tests {
+namespace AsmdefHelper.DependencyGraph.Editor.Tests {
     public class NodeIdTest {
         [Test]
         public void TestNodeIdValue() {

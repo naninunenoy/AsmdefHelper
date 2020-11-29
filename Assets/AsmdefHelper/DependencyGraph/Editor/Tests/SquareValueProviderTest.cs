@@ -5,7 +5,7 @@ using NUnit.Framework;
 using UnityEditor;
 using UnityEngine.TestTools;
 
-namespace AsmdefHelper.DependencyGraph.Editor.DependencyNode.Tests {
+namespace AsmdefHelper.DependencyGraph.Editor.Tests {
     public class SquareValueProviderTest {
 
         [Test]

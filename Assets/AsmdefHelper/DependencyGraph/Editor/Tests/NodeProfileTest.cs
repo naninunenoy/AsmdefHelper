@@ -2,8 +2,9 @@ using System.Collections;
 using NUnit.Framework;
 using UnityEditor;
 using UnityEngine.TestTools;
+using AsmdefHelper.DependencyGraph.Editor.DependencyNode;
 
-namespace AsmdefHelper.DependencyGraph.Editor.DependencyNode.Tests {
+namespace AsmdefHelper.DependencyGraph.Editor.Tests {
     public class NodeProfileTest {
 
         [Test]

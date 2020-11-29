@@ -1,6 +1,7 @@
 using System.Collections.Generic;
+using AsmdefHelper.DependencyGraph.Editor.DependencyNode;
 
-namespace AsmdefHelper.DependencyGraph.Editor.DependencyNode.Tests {
+namespace AsmdefHelper.DependencyGraph.Editor.Tests {
 
     public static class Ids {
         public static readonly NodeId _0 = new NodeId(0);
