@@ -14,9 +14,11 @@ Unity assembly definition viewer.
 
 Show assembly definition referances in your project like this.
 
-<img src="https://user-images.githubusercontent.com/15327448/79340184-e8f44080-7f64-11ea-87f9-3ec90f9c5fa5.png" width="450" />
+<img src="https://user-images.githubusercontent.com/15327448/100633752-cdae3800-3371-11eb-9729-dfb8c4fd3412.png" width="580" />
 
 You need to organize the nodes by yourself.
+
+You can toggle node appear/disappear.
 
 ## Multiple Edit
 
