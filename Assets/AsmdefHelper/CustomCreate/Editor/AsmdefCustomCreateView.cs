@@ -40,7 +40,6 @@ namespace AsmdefHelper.CustomCreate.Editor {
             var NoEngineReferencesToggle = root.Q<Toggle>(className: "NoEngineReferencesToggle");
             var OverrideReferencesToggle = root.Q<Toggle>(className: "OverrideReferencesToggle");
             var RootNamespaceTextField = root.Q<TextField>(className: "RootNamespaceTextField");
-
             var IsEditorToggle = root.Q<Toggle>(className: "IsEditorToggle");
             var CreateButton = root.Q<Button>(className: "CreateButton");
 
@@ -56,22 +55,22 @@ namespace AsmdefHelper.CustomCreate.Editor {
 #if UNITY_2020_2_OR_NEWER
             RootNamespaceTextField.value = defaultName;
 #else
-            root.Remove(RootNamespaceTextField);
+            root.Q<Box>(className: "Box").Remove(RootNamespaceTextField);
 #endif
             // .asmdefを作成して閉じる
             CreateButton.clickable.clicked += () => {
                 var asmdefName = NameTextField.value;
                 var asmdef = new AssemblyDefinitionJson {
                     name = asmdefName,
+#if UNITY_2020_2_OR_NEWER
+                    rootNamespace = RootNamespaceTextField.value,
+#endif
                     allowUnsafeCode = AllowUnsafeToggle.value,
                     autoReferenced = AutoReferencedToggle.value,
                     overrideReferences = OverrideReferencesToggle.value,
                     noEngineReferences = NoEngineReferencesToggle.value,
                     includePlatforms = IsEditorToggle.value ? new[] { "Editor" } : new string[0]
                 };
-#if UNITY_2020_2_OR_NEWER
-                asmdef.rootNamespace = RootNamespaceTextField.value;
-#endif
                 var asmdefJson = JsonUtility.ToJson(asmdef, true);
                 var asmdefPath = $"{directory}/{asmdefName}.asmdef";
                 File.WriteAllText(asmdefPath, asmdefJson, Encoding.UTF8);

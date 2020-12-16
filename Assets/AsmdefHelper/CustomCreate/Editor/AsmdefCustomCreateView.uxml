@@ -6,7 +6,7 @@
     xsi:noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd"
 >
     <engine:Label class="AsmdefInfo" text="Input your asmdef info"/>
-    <engine:Box>
+    <engine:Box class="Box">
         <engine:TextField class="PathTextField"  label="Path" text="ASMDEF_PATH_HERE"  readonly="true"/>
         <engine:TextField class="NameTextField"  label="Name" text="ASMDEF_NAME_HERE"/>
         <engine:Toggle class="AllowUnsafeToggle"  label="Allow 'unsafe' Code" value="false"/>
