@@ -1,5 +1,5 @@
 ﻿using UnityEditor;
-using UnityEditor.Experimental.AssetImporters;
+
 
 namespace AsmdefHelper.UnityInternal {
     public class InspectorWindowWrapper : EditorWindow{
@@ -17,7 +17,7 @@ namespace AsmdefHelper.UnityInternal {
 
         public void AllApply() {
             foreach (var editor in inspectorWindow.tracker.activeEditors) {
-                var assetImporterEditor = editor as AssetImporterEditor;
+                var assetImporterEditor = editor as UnityEditor.AssetImporters.AssetImporterEditor;
 
                 if (assetImporterEditor != null && assetImporterEditor.HasModified()) {
                     assetImporterEditor.ApplyAndImport();
