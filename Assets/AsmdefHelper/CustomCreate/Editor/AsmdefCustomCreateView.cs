@@ -37,8 +37,10 @@ namespace AsmdefHelper.CustomCreate.Editor {
             var NameTextField = root.Q<TextField>(className: "NameTextField");
             var AllowUnsafeToggle = root.Q<Toggle>(className: "AllowUnsafeToggle");
             var AutoReferencedToggle = root.Q<Toggle>(className: "AutoReferencedToggle");
-            var OverrideReferencesToggle = root.Q<Toggle>(className: "OverrideReferencesToggle");
             var NoEngineReferencesToggle = root.Q<Toggle>(className: "NoEngineReferencesToggle");
+            var OverrideReferencesToggle = root.Q<Toggle>(className: "OverrideReferencesToggle");
+            var RootNamespaceTextField = root.Q<TextField>(className: "RootNamespaceTextField");
+
             var IsEditorToggle = root.Q<Toggle>(className: "IsEditorToggle");
             var CreateButton = root.Q<Button>(className: "CreateButton");
 
@@ -47,8 +49,15 @@ namespace AsmdefHelper.CustomCreate.Editor {
             var assetPath = AssetDatabase.GetAssetPath(asset);
             var directory = string.IsNullOrWhiteSpace(assetPath) ? "Assets/" : assetPath;
             PathTextField.value = directory;
-            NameTextField.value = directory.Replace("Assets/", "").Replace('/', '.');
+            var defaultName = directory.Replace("Assets/", "").Replace('/', '.');
+            NameTextField.value = defaultName;
 
+            // RootNamespace が設定できるのは2020.2以降
+#if UNITY_2020_2_OR_NEWER
+            RootNamespaceTextField.value = defaultName;
+#else
+            root.Remove(RootNamespaceTextField);
+#endif
             // .asmdefを作成して閉じる
             CreateButton.clickable.clicked += () => {
                 var asmdefName = NameTextField.value;
@@ -60,6 +69,9 @@ namespace AsmdefHelper.CustomCreate.Editor {
                     noEngineReferences = NoEngineReferencesToggle.value,
                     includePlatforms = IsEditorToggle.value ? new[] { "Editor" } : new string[0]
                 };
+#if UNITY_2020_2_OR_NEWER
+                asmdef.rootNamespace = RootNamespaceTextField.value;
+#endif
                 var asmdefJson = JsonUtility.ToJson(asmdef, true);
                 var asmdefPath = $"{directory}/{asmdefName}.asmdef";
                 File.WriteAllText(asmdefPath, asmdefJson, Encoding.UTF8);

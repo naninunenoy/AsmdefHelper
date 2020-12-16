@@ -11,8 +11,9 @@
         <engine:TextField class="NameTextField"  label="Name" text="ASMDEF_NAME_HERE"/>
         <engine:Toggle class="AllowUnsafeToggle"  label="Allow 'unsafe' Code" value="false"/>
         <engine:Toggle class="AutoReferencedToggle"  label="Auto Referenced" value="true"/>
-        <engine:Toggle class="OverrideReferencesToggle"  label="Override Referenced" value="false"/>
         <engine:Toggle class="NoEngineReferencesToggle"  label="No Engine References" value="false"/>
+        <engine:Toggle class="OverrideReferencesToggle"  label="Override Referenced" value="false"/>
+        <engine:TextField class="RootNamespaceTextField"  label="Root Namespace" text="ROOT_NAMESPACE_HERE"/>
         <engine:Toggle class="IsEditorToggle"  label="Is Editor" value="false"/>
         <engine:Button class="CreateButton"  text="Create" />
     </engine:Box>
