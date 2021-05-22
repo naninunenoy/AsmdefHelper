@@ -32,15 +32,6 @@ Open multiple assembly definition inspector views for parallel editing.
 
 <img src="https://user-images.githubusercontent.com/15327448/79342775-813ff480-7f68-11ea-851d-3e93b5948c0b.gif" width="450" />
 
-## Sync Solution
-
-Refresh .sln/.csproj in your project.
-
-(menu) > [AsmdefHelper] > [Sync C# Solution]
-
-I referred to this: [[SOLVED] Unity not generating .sln file from Assets > Open C# Project
-](https://forum.unity.com/threads/solved-unity-not-generating-sln-file-from-assets-open-c-project.538487/)
-
 ## Compile Locker
 
 Lock unity editor compile to edit an asmdef.
@@ -72,7 +63,7 @@ And you can also rename an asmdef by one action.
 ___
 
 ## Environment
-Unity 2020.2.0f1
+Unity 2021.1.7f1
 
 This library use unity internal class, so may be not work (or couse build error) depending your unity vresion.
 
