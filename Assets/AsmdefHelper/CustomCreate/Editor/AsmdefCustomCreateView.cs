@@ -33,43 +33,43 @@ namespace AsmdefHelper.CustomCreate.Editor {
             root.Add(labelFromUXML);
 
             // UI取得
-            var PathTextField = root.Q<TextField>(className: "PathTextField");
-            var NameTextField = root.Q<TextField>(className: "NameTextField");
-            var AllowUnsafeToggle = root.Q<Toggle>(className: "AllowUnsafeToggle");
-            var AutoReferencedToggle = root.Q<Toggle>(className: "AutoReferencedToggle");
-            var NoEngineReferencesToggle = root.Q<Toggle>(className: "NoEngineReferencesToggle");
-            var OverrideReferencesToggle = root.Q<Toggle>(className: "OverrideReferencesToggle");
-            var RootNamespaceTextField = root.Q<TextField>(className: "RootNamespaceTextField");
-            var IsEditorToggle = root.Q<Toggle>(className: "IsEditorToggle");
-            var CreateButton = root.Q<Button>(className: "CreateButton");
+            var pathTextField = root.Q<TextField>(className: "PathTextField");
+            var nameTextField = root.Q<TextField>(className: "NameTextField");
+            var allowUnsafeToggle = root.Q<Toggle>(className: "AllowUnsafeToggle");
+            var autoReferencedToggle = root.Q<Toggle>(className: "AutoReferencedToggle");
+            var noEngineReferencesToggle = root.Q<Toggle>(className: "NoEngineReferencesToggle");
+            var overrideReferencesToggle = root.Q<Toggle>(className: "OverrideReferencesToggle");
+            var rootNamespaceTextField = root.Q<TextField>(className: "RootNamespaceTextField");
+            var isEditorToggle = root.Q<Toggle>(className: "IsEditorToggle");
+            var createButton = root.Q<Button>(className: "CreateButton");
 
             // PathとNameの初期値
             var asset = Selection.activeObject;
             var assetPath = AssetDatabase.GetAssetPath(asset);
             var directory = string.IsNullOrWhiteSpace(assetPath) ? "Assets/" : assetPath;
-            PathTextField.value = directory;
+            pathTextField.value = directory;
             var defaultName = directory.Replace("Assets/", "").Replace('/', '.');
-            NameTextField.value = defaultName;
+            nameTextField.value = defaultName;
 
             // RootNamespace が設定できるのは2020.2以降
 #if UNITY_2020_2_OR_NEWER
-            RootNamespaceTextField.value = defaultName;
+            rootNamespaceTextField.value = defaultName;
 #else
-            root.Q<Box>(className: "Box").Remove(RootNamespaceTextField);
+            root.Q<Box>(className: "Box").Remove(rootNamespaceTextField);
 #endif
             // .asmdefを作成して閉じる
-            CreateButton.clickable.clicked += () => {
-                var asmdefName = NameTextField.value;
+            createButton.clickable.clicked += () => {
+                var asmdefName = nameTextField.value;
                 var asmdef = new AssemblyDefinitionJson {
                     name = asmdefName,
 #if UNITY_2020_2_OR_NEWER
-                    rootNamespace = RootNamespaceTextField.value,
+                    rootNamespace = rootNamespaceTextField.value,
 #endif
-                    allowUnsafeCode = AllowUnsafeToggle.value,
-                    autoReferenced = AutoReferencedToggle.value,
-                    overrideReferences = OverrideReferencesToggle.value,
-                    noEngineReferences = NoEngineReferencesToggle.value,
-                    includePlatforms = IsEditorToggle.value ? new[] { "Editor" } : new string[0]
+                    allowUnsafeCode = allowUnsafeToggle.value,
+                    autoReferenced = autoReferencedToggle.value,
+                    overrideReferences = overrideReferencesToggle.value,
+                    noEngineReferences = noEngineReferencesToggle.value,
+                    includePlatforms = isEditorToggle.value ? new[] { "Editor" } : new string[0]
                 };
                 var asmdefJson = JsonUtility.ToJson(asmdef, true);
                 var asmdefPath = $"{directory}/{asmdefName}.asmdef";

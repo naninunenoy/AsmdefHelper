@@ -9,6 +9,7 @@
     <engine:Box>
         <engine:TextField class="PathTextField"  label="Path" text="ASMDEF_PATH_HERE"  readonly="true"/>
         <engine:TextField class="NameTextField"  label="Name" text="ASMDEF_NAME_HERE"/>
+        <engine:TextField label="Root Namespace" text="ROOT_NAMESPACE_HERE" class="RootNamespaceTextField" />
         <engine:Button class="RenameButton"  text="Rename" />
     </engine:Box>
 </engine:UXML>

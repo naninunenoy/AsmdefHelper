@@ -6,6 +6,13 @@ Unity assembly definition utilities.
 
 This library solve inconvenience of assembly definition on unity.
 
+### install via upm
+Please add this line to `dependencies` of `Packages/manifest.json`.
+
+```
+"dev.n5y.asmdefhelper": "https://github.com/naninunenoy/AsmdefHelper.git?path=Assets"
+```
+
 ## Dependency Graph
 
 Unity assembly definition viewer.
@@ -63,7 +70,7 @@ And you can also rename an asmdef by one action.
 ___
 
 ## Environment
-Unity 2021.1.7f1
+Unity 2021.1.16f1
 
 This library use unity internal class, so may be not work (or couse build error) depending your unity vresion.
 

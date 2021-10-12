@@ -21,8 +21,8 @@ namespace AsmdefHelper.CustomCreate.Editor {
             if (extension == "asmdef") {
                 var window = GetWindow<AsmdefRenameView>();
                 window.titleContent = new GUIContent("AsmdefRenameView");
-                window.minSize = new Vector2(200, 80);
-                window.maxSize = new Vector2(2000, 80);
+                window.minSize = new Vector2(200, 100);
+                window.maxSize = new Vector2(2000, 100);
             }
         }
 
@@ -44,29 +44,42 @@ namespace AsmdefHelper.CustomCreate.Editor {
             root.Add(labelFromUXML);
 
             // UI取得
-            var PathTextField = root.Q<TextField>(className: "PathTextField");
-            var NameTextField = root.Q<TextField>(className: "NameTextField");
-            var CreateButton = root.Q<Button>(className: "RenameButton");
+            var pathTextField = root.Q<TextField>(className: "PathTextField");
+            var nameTextField = root.Q<TextField>(className: "NameTextField");
+            var rootNamespaceTextField = root.Q<TextField>(className: "RootNamespaceTextField");
+            var createButton = root.Q<Button>(className: "RenameButton");
 
             // 既存のasmdef読み込み
             var orgText = File.ReadAllText(renameAsmdefPath);
             var asmdef = JsonUtility.FromJson<AssemblyDefinitionJson>(orgText);
 
             // 既存パラメータの反映
-            PathTextField.value = asmdefDirectory;
-            NameTextField.value = asmdef.name;
+            pathTextField.value = asmdefDirectory;
+            nameTextField.value = asmdef.name;
+            var asmdefNameOrg = asmdef.name;
+
+            // RootNamespace が設定できるのは2020.2以降
+#if UNITY_2020_2_OR_NEWER
+            rootNamespaceTextField.value = asmdef.rootNamespace;
+#else
+            root.Q<Box>(className: "Box").Remove(rootNamespaceTextField);
+#endif
 
             // .asmdefのnameとファイル名を更新して閉じる
-            CreateButton.clickable.clicked += () => {
-                // nameのみ更新
-                var asmdefName = NameTextField.value;
+            createButton.clickable.clicked += () => {
+                var asmdefName = nameTextField.value;
                 asmdef.name = asmdefName;
+#if UNITY_2020_2_OR_NEWER
+                asmdef.rootNamespace = rootNamespaceTextField.value;
+#endif
                 var asmdefJson = JsonUtility.ToJson(asmdef, true);
                 var newAsmdefPath = $"{asmdefDirectory}/{asmdefName}.asmdef";
                 // 新asmdef作成
                 File.WriteAllText(newAsmdefPath, asmdefJson, Encoding.UTF8);
-                // 旧asmdef削除
-                File.Delete(renameAsmdefPath);
+                // ファイル名が変わった場合は旧asmdef削除
+                if (asmdefNameOrg != asmdefName) {
+                    FileUtil.DeleteFileOrDirectory(renameAsmdefPath);
+                }
                 AssetDatabase.Refresh();
                 Close();
             };
