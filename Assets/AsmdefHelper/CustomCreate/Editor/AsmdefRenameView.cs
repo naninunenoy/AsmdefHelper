@@ -44,32 +44,32 @@ namespace AsmdefHelper.CustomCreate.Editor {
             root.Add(labelFromUXML);
 
             // UI取得
-            var PathTextField = root.Q<TextField>(className: "PathTextField");
-            var NameTextField = root.Q<TextField>(className: "NameTextField");
-            var RootNamespaceTextField = root.Q<TextField>(className: "RootNamespaceTextField");
-            var CreateButton = root.Q<Button>(className: "RenameButton");
+            var pathTextField = root.Q<TextField>(className: "PathTextField");
+            var nameTextField = root.Q<TextField>(className: "NameTextField");
+            var rootNamespaceTextField = root.Q<TextField>(className: "RootNamespaceTextField");
+            var createButton = root.Q<Button>(className: "RenameButton");
 
             // 既存のasmdef読み込み
             var orgText = File.ReadAllText(renameAsmdefPath);
             var asmdef = JsonUtility.FromJson<AssemblyDefinitionJson>(orgText);
 
             // 既存パラメータの反映
-            PathTextField.value = asmdefDirectory;
-            NameTextField.value = asmdef.name;
+            pathTextField.value = asmdefDirectory;
+            nameTextField.value = asmdef.name;
 
             // RootNamespace が設定できるのは2020.2以降
 #if UNITY_2020_2_OR_NEWER
-            RootNamespaceTextField.value = asmdef.rootNamespace;
+            rootNamespaceTextField.value = asmdef.rootNamespace;
 #else
-            root.Q<Box>(className: "Box").Remove(RootNamespaceTextField);
+            root.Q<Box>(className: "Box").Remove(rootNamespaceTextField);
 #endif
 
             // .asmdefのnameとファイル名を更新して閉じる
-            CreateButton.clickable.clicked += () => {
-                var asmdefName = NameTextField.value;
+            createButton.clickable.clicked += () => {
+                var asmdefName = nameTextField.value;
                 asmdef.name = asmdefName;
 #if UNITY_2020_2_OR_NEWER
-                asmdef.rootNamespace = RootNamespaceTextField.value;
+                asmdef.rootNamespace = rootNamespaceTextField.value;
 #endif
                 var asmdefJson = JsonUtility.ToJson(asmdef, true);
                 var newAsmdefPath = $"{asmdefDirectory}/{asmdefName}.asmdef";
