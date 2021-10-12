@@ -56,6 +56,7 @@ namespace AsmdefHelper.CustomCreate.Editor {
             // 既存パラメータの反映
             pathTextField.value = asmdefDirectory;
             nameTextField.value = asmdef.name;
+            var asmdefNameOrg = asmdef.name;
 
             // RootNamespace が設定できるのは2020.2以降
 #if UNITY_2020_2_OR_NEWER
@@ -75,8 +76,10 @@ namespace AsmdefHelper.CustomCreate.Editor {
                 var newAsmdefPath = $"{asmdefDirectory}/{asmdefName}.asmdef";
                 // 新asmdef作成
                 File.WriteAllText(newAsmdefPath, asmdefJson, Encoding.UTF8);
-                // 旧asmdef削除
-                File.Delete(renameAsmdefPath);
+                // ファイル名が変わった場合は旧asmdef削除
+                if (asmdefNameOrg != asmdefName) {
+                    FileUtil.DeleteFileOrDirectory(renameAsmdefPath);
+                }
                 AssetDatabase.Refresh();
                 Close();
             };
