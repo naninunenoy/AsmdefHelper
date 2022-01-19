@@ -70,7 +70,7 @@ And you can also rename an asmdef by one action.
 ___
 
 ## Environment
-Unity 2021.1.16f1
+Unity 2021.2.8f1
 
 This library use unity internal class, so may be not work (or couse build error) depending your unity vresion.
 
