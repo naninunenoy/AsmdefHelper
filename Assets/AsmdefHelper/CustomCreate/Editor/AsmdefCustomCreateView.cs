@@ -11,8 +11,8 @@ namespace AsmdefHelper.CustomCreate.Editor {
         public static void ShowWindow() {
             var window = GetWindow<AsmdefCustomCreateView>();
             window.titleContent = new GUIContent("AsmdefCustomCreateView");
-            window.minSize = new Vector2(200, 180);
-            window.maxSize = new Vector2(2000, 180);
+            window.minSize = new Vector2(200, 200);
+            window.maxSize = new Vector2(2000, 2000);
         }
 
         public void OnEnable() {
