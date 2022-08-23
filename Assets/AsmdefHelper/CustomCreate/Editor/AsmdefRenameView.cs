@@ -40,7 +40,11 @@ namespace AsmdefHelper.CustomCreate.Editor {
                         "Packages/dev.n5y.asmdefhelper/AsmdefHelper/CustomCreate/Editor/AsmdefRenameView.uxml");
             }
 
+#if UNITY_2020_1_OR_NEWER
             VisualElement labelFromUXML = visualTree.Instantiate();
+#else
+            VisualElement labelFromUXML = visualTree.CloneTree();
+#endif
             root.Add(labelFromUXML);
 
             // UI取得
