@@ -33,7 +33,11 @@ namespace AsmdefHelper.DependencyGraph.Editor {
                         "Packages/dev.n5y.asmdefhelper/AsmdefHelper/DependencyGraph/Editor/AsmdefSelectionView/AsmdefSelectionView.uxml");
             }
 
+#if UNITY_2020_1_OR_NEWER
             VisualElement labelFromUXML = visualTree.Instantiate();
+#else
+            VisualElement labelFromUXML = visualTree.CloneTree();
+#endif
             root.Add(labelFromUXML);
         }
 
