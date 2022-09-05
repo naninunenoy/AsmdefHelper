@@ -10,7 +10,7 @@ This library solve inconvenience of assembly definition on unity.
 Please add this line to `dependencies` of `Packages/manifest.json`.
 
 ```
-"dev.n5y.asmdefhelper": "https://github.com/naninunenoy/AsmdefHelper.git?path=Assets"
+"dev.n5y.asmdefhelper": "https://github.com/naninunenoy/AsmdefHelper.git?path=Assets/AsmdefHelper"
 ```
 
 ## Dependency Graph
@@ -70,11 +70,16 @@ And you can also rename an asmdef by one action.
 ___
 
 ## Environment
-Unity 2021.2.8f1
+Unity 2022.1.6f1
 
 This library use unity internal class, so may be not work (or couse build error) depending your unity vresion.
 
 I referred to this: [【Unity, C#】internalな型やメンバにアクセスするには、多分これが一番早いと思います](https://qiita.com/mob-sakai/items/f3bbc0c45abc31ea7ac0)
+
+I have confirmed that the following unity versions compile successfully.
+ * 2019.4.31f1
+ * 2021.2.8f1
+ * 2022.1.6f1
 
 ## License
 MIT
